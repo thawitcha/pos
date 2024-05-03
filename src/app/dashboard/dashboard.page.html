@@ -114,8 +114,16 @@
             <th>คงเหลือ</th>
           </tr>
         </thead>
-        <tbody class="table-fixed wide">
+        <tbody class="table-fixed wide" *ngFor="let item of foods">
           <tr class="pl-2_5 text">
+            <td class="text-center"> <img src="{{item.pic_url}}" alt="test"></td>
+            <td class="text-center">{{item.name}}</td>
+            <td class="text-center">{{item.fg_name}}</td>
+            <td class="text-center">{{item.price}}</td>
+            <td class="text-center">{{item.status}}</td>
+            <td class="text-center">{{item.total}}</td>
+          </tr>
+          <!-- <tr class="pl-2_5 text">
             <td class="text-center">Image</td>
             <td class="text-center">Item name</td>
             <td class="text-center">Item type</td>
@@ -130,15 +138,7 @@
             <td class="text-center">50.00</td>
             <td class="text-center">Item status</td>
             <td class="text-center">Item amount</td>
-          </tr>
-          <tr class="pl-2_5 text">
-            <td class="text-center">Image</td>
-            <td class="text-center">Item name</td>
-            <td class="text-center">Item type</td>
-            <td class="text-center">50.00</td>
-            <td class="text-center">Item status</td>
-            <td class="text-center">Item amount</td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
 
