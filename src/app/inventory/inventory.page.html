@@ -10,4 +10,29 @@
       <ion-title size="large">inventory</ion-title>
     </ion-toolbar>
   </ion-header>
+    <div>
+      <table class="table-fixed wide text">
+        <thead class="text_color_black">
+          <tr>
+            <th class="font-medium">รูปภาพ</th>
+            <th class="font-medium">ชื่อสินค้า</th>
+            <th class="font-medium">Catagory</th>
+            <th class="font-medium">ราคา</th>
+            <th class="font-medium">Status</th>
+            <th class="font-medium">คงเหลือ</th>
+          </tr>
+        </thead>
+        <tbody class="table-fixed wide text" *ngFor="let item of foods">
+          <tr class="pl-2_5 text_color_black">
+            <td class="text-center"> <img src="{{item.pic_url}}" alt="test"></td>
+            <td class="text-center">{{item.name}}</td>
+            <td class="text-center">{{item.fg_name}}</td>
+            <td class="text-center">{{item.price}}</td>
+            <td class="text-center">{{item.status}}</td>
+            <td class="text-center">{{item.total}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
 </ion-content>
