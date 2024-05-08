@@ -11,5 +11,5 @@ export class SalePage implements OnInit {
 
   ngOnInit() {
   }
-
+/////////////
 }
