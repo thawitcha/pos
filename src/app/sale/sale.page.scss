@@ -32,6 +32,25 @@
   border-radius: 0.5rem;
   /* 8px */
 }
+.btn {
+  // box-shadow: rgba(0, 0, 0, 0.24) 1px 2px 4px;
+  border-radius: 10px;
+  font-size: 18px;
+  overflow: hidden;
+}
+.buttons {
+  text-align: center;
+  .btn {
+      width: 107px;
+      height: 50px;
+  }
+  // .btn2 {
+  //     height: 50px;
+  //     border-radius: 10px;
+  //     font-size: 18px;
+  //     overflow: hidden;
+  // }
+}
 
 .color_button {
   --background: var(--ion-color-success)
@@ -85,4 +104,24 @@ ion-col {
 }
 .theme-text{
   color: black;
+}
+.theme-top-bar {
+  --background: var(--ion-background-color-top);
+    @media (prefers-color-scheme: dark) {
+      --background: var(--ion-background-color-top-dark);
+    }
+    .theme_txt {
+      --color: white;
+    }
+  }
+  .custom-button {
+    width: 130px; /* กำหนดความกว้าง */
+    height: 30px; /* กำหนดความสูง */
+  }
+  .full-width-button {
+  width: 9.1vw; /* ให้ขนาดของปุ่มมีความกว้างเท่ากับ 90% ของ viewport width */
+}
+.custom-button2P{
+  width: 130px; /* กำหนดความกว้าง */
+  height: 30px; /* กำหนดความสูง */
 }
