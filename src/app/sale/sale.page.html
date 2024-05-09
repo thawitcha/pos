@@ -1,68 +1,209 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>sale</ion-title>
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar class="theme-top-bar">
+    <ion-title class="theme_txt">หน้าขาย</ion-title>
   </ion-toolbar>
-</ion-header>
-
+</ion-header> -->
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">หน้าขาย</ion-title>
     </ion-toolbar>
-  </ion-header>
-  <ion-grid class="display">
+  </ion-header> -->
+  <!-- <ion-grid id="grid-1">
     <ion-row class="width-full">
-    <ion-col size-sm="12" size-md="8" size-lg="8">
-      <div class="bt display flex-row">
-        <span>Order ID:</span>
-        <span>0123456</span>
-        <span>Date</span>
-        <span>time</span>
-        <ion-button class="rounded-lg color_button">เพิ่มสินค้า</ion-button>
+      <ion-col size-sm="12" size-md="8" size-lg="8">
+        <div class="bt display flex-row">
+          <span>Order ID:</span>
+          <span>0123456</span>
+          <span>Date</span>
+          <span>time</span>
+          <ion-button class="rounded-lg color_button">เพิ่มสินค้า</ion-button>
+        </div>
+        <div>
+          <table class="width-full table-fixed">
+            <thead>
+              <tr>
+                <th>ลำดับ</th>
+                <th>ชื่อสินค้า</th>
+                <th>ราคา</th>
+                <th>จำนวน</th>
+                <th>รวม</th>
+                <th>แก้ไข</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>item name</td>
+                <td>50</td>
+                <td>2</td>
+                <td>100</td>
+                <td>ลบ</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>item name</td>
+                <td>50</td>
+                <td>2</td>
+                <td>100</td>
+                <td>ลบ</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="display width-full flex-row bt position-fix">
+          <span>14 รายการ</span>
+          <span>รวม 700 บาท</span>
+        </div>
+      </ion-col>
+      <ion-col class="display" size-sm="12" size-md="4" size-lg="4">
+        <ion-col size="12" class="display boarder width-full  ">
+          <ion-button class="rounded-lg  theme-botton">พักบิล</ion-button>
+          <ion-button class="rounded-lg  theme-botton">รายการพักบิล</ion-button>
+          <ion-button class="rounded-lg  theme-botton">ส่วนลด และ ภาษี</ion-button>
+        </ion-col>
+        <div class="width-full">
+          <table class="width-full table-fixed text">
+            <tbody>
+              <tr>
+                <td class="text-left">รวมทั้งสิ้น</td>
+                <td class="text-center">700</td>
+
+              </tr>
+              <tr>
+                <td class="text-left">ส่วนลด</td>
+                <td class="text-center">-55</td>
+
+              </tr>
+              <tr>
+                <td class="text-left">ราคาสุทธิ</td>
+                <td class="text-center">645</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ion-col size="12" class="display boarder width-full">
+          <ion-button class="rounded-lg theme-botton">เงินสด</ion-button>
+          <ion-button class="rounded-lg theme-botton2 theme-text">เงินโอน</ion-button>
+          <ion-button class="rounded-lg theme-botton2 theme-text">ค้นหาสมาชิก</ion-button>
+          <ion-button class="rounded-lg color_button">เพิ่มสมาชิก</ion-button>
+        </ion-col>
+        <div>
+          <ion-card>
+
+          </ion-card>
+        </div>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid> -->
+  <div class="flex flex-row ">
+
+    <ion-card class="w-2/3">
+      <ion-card-header class="">
+        <!-- <ion-card-title class="space-x-0">Stock</ion-card-title>
+        <ion-card-subtitle >Card Subtitle</ion-card-subtitle>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+        <div class="w-full flex justify-between">
+          <span>Order ID</span>
+          <span>:123456</span>
+          <span>24 เมษายน 2567</span>
+          <span>13.00 น.</span>
+          <span>+ เพิ่มสินค้า</span>
+        </div>
+      </ion-card-header>
+      <table class="w-full">
+        <thead class="">
+          <tr>
+            <th class="">ลำดับ</th>
+            <th class="text-left">ชื่อสินค้า</th>
+            <th class="">ราคา</th>
+            <th class="">จำนวน</th>
+            <th class="">รวม</th>
+            <th class="">แก้ไข</th>
+          </tr>
+        </thead>
+        <tbody class="">
+          <tr class="">
+            <td class="text-center">1</td>
+            <td>Coke</td>
+            <td class="text-center">price</td>
+            <td class="text-center">count</td>
+            <td class="text-center">total</td>
+
+          </tr>
+
+        </tbody>
+      </table>
+
+    </ion-card>
+
+    <div class="flex flex-col w-1/3">
+      <div class="display_flex flex-row font_style text">
+        <div class="w-full">
+          <ion-button class="custom-button"> พักบิล </ion-button>
+          <ion-button class="custom-button"> รายการพักบิล </ion-button>
+          <ion-button class="full-width-button"> ส่วนลดที่ใช้ และ ภาษี </ion-button>
+        </div>
+        <div>
+          <ion-card>
+            <ion-card-header class="flex flex-col w-full ">
+              <div class="flex-row justify-between flex">
+                <span class="text-left">รวมทั้งสิ้น</span>
+                <span class="text-right">700</span>
+              </div>
+              <div class="flex-row justify-between flex">
+                <span class="text-left">ส่วนลด</span>
+                <span class="text-right">-55</span>
+              </div>
+              <div class="flex flex-row justify-between">
+                <span class="text-left ">ราคาสุทธิ</span>
+                <span class="text-right">645</span>
+              </div>
+            </ion-card-header>
+          </ion-card>
+        </div>
+        <div class="w-full">
+          <ion-button> เงินสด </ion-button>
+          <ion-button> เงินโอน </ion-button>
+          <ion-button> ค้นหาสมาชิก </ion-button>
+          <ion-button> เพิ่มสมาชิก</ion-button>
+        </div>
+        <ion-card class="basis-2_4 text">
+          <ion-card-header class="text-center text_color_black">
+            <p class="text-xl">เฉลี่ย/ต่อบิล</p>
+            <p class="text-xl3 font-semiblod">฿120</p>
+          </ion-card-header>
+
+        </ion-card>
       </div>
-      <div>
-        <table class="width-full">
-          <thead >
-            <tr>
-              <th>ลำดับ</th>
-              <th>ชื่อสินค้า</th>
-              <th>ราคา</th>
-              <th>จำนวน</th>
-              <th>รวม</th>
-              <th>แก้ไข</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>item name</td>
-              <td>50</td>
-              <td>2</td>
-              <td>100</td>
-              <td>ลบ</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>item name</td>
-              <td>50</td>
-              <td>2</td>
-              <td>100</td>
-              <td>ลบ</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="display width-full flex-row bt position-fix">
-        <span>14 รายการ</span>
-        <span>รวม 700 บาท</span>
-      </div>
-    </ion-col>
-    <ion-col class="display"size-sm="12" size-md="4" size-lg="4">
-      <ion-button class="rounded-lg color_button">เพิ่มสินค้า</ion-button>
-      <ion-button class="rounded-lg color_button">เพิ่มสินค้า</ion-button>
-      <ion-button class="rounded-lg color_button">เพิ่มสินค้า</ion-button>
-    </ion-col>
-  </ion-row>
-  </ion-grid>
+
+      <ion-grid fixed>
+        <ion-col class="buttons">
+          <ion-row class="w-full">
+            <ion-button class="btn">1</ion-button>
+            <ion-button class="btn">5</ion-button>
+            <ion-button class="btn">10</ion-button>
+          </ion-row>
+          <ion-row class="w-full">
+            <ion-button class="btn">20</ion-button>
+            <ion-button class="btn">50</ion-button>
+            <ion-button class="btn">100</ion-button>
+          </ion-row>
+          <ion-row class="w-full">
+            <ion-button class="btn">500</ion-button>
+            <ion-button class="btn">1000</ion-button>
+            <ion-button class="btn">พอดี</ion-button>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+
+      <ion-card-content class="text_color_black">
+        เงินกาโม่
+        เงินเหรียญ
+        เงินปลอม
+      </ion-card-content>
+    </div>
+  </div>
 </ion-content>
-<!-- <div></div> -->
