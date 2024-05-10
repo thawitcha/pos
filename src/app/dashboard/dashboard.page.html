@@ -42,8 +42,8 @@
         <ion-card class="basis-2_4 ">
           <ion-card-header class="text-center text_color_black">
             <p class="text-xl font-medium ">จำนวนบิล</p>
-            <div class="rounded-lg border-4 mx-4 bg-[#4590f1]">
-            </div>
+            <hr class="h-[6px] bg-black rounded-lg m-1">
+
             <p class="text-xl3 font-semiblod">75</p>
           </ion-card-header>
 
@@ -76,9 +76,16 @@
         </ion-card-header>
 
         <ion-card-content class="text_color_black">
-          เงินกาโม่
-          เงินเหรียญ
-          เงินปลอม
+          <div id="chart">
+            <apx-chart
+              [series]="chartOptions.series"
+              [chart]="chartOptions.chart"
+              [xaxis]="chartOptions.xaxis"
+              [stroke]="chartOptions.stroke"
+              [tooltip]="chartOptions.tooltip"
+              [dataLabels]="chartOptions.dataLabels"
+            ></apx-chart>
+          </div>
         </ion-card-content>
       </ion-card>
     </div>
@@ -109,9 +116,9 @@
         <span class="text-center  w-24">คงเหลือ</span>
       </div> -->
       <table class="table-fixed wide text">
-        <thead class="text_color_black">
+        <thead class="text_color_black ">
           <tr>
-            <th class="font-medium">รูปภาพ</th>
+            <th class="font-medium w-[100px] text-left "><span class="ml-[25px]">รูปภาพ</span> </th>
             <th class="font-medium">ชื่อสินค้า</th>
             <th class="font-medium">Catagory</th>
             <th class="font-medium">ราคา</th>
@@ -119,9 +126,10 @@
             <th class="font-medium">คงเหลือ</th>
           </tr>
         </thead>
-        <tbody class="table-fixed wide text" *ngFor="let item of foods">
-          <tr class="pl-2_5 text_color_black">
-            <td class="text-center"> <img src="{{item.pic_url}}" alt="test"></td>
+        <!-- border-8 border-gray-500 -->
+        <tbody class="table-fixed wide text " *ngFor="let item of foods">
+          <tr class="items-center text_color_black border-y-2 border-slate-200"> 
+            <td class="justify-center flex"> <img src="{{item.pic_url}}" alt="test" class="items-center object-cover h-[75px] w-[100px]  p-[8px] "></td>
             <td class="text-center">{{item.name}}</td>
             <td class="text-center">{{item.fg_name}}</td>
             <td class="text-center">{{item.price}}</td>
