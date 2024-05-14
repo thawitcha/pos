@@ -1,106 +1,129 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="theme-top-bar">
-    <ion-title class="theme_txt ">Dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
+  <ion-toolbar class="theme-top-bar ">
+    <ion-title class="theme_txt flex items-center">
 
-<ion-content [fullscreen]="true " class="theme-bg">
-  <div class="display_flex flex-row text font_style">
-    <div class="display_flex flex-col width1-3">
-      <ion-card>
-        <ion-card-header class="text_color_black  ">
-          <span class="text_color_black text_lg">ยอดขายวันนี้</span>
-          
-          <p class="text_3xl font-medium">฿{{totalPrice}}</p>
-        </ion-card-header>
-        <div class="rounded-lg h-1 border-4 mx-4 bg-[#EFF2F6] opacity-60">
+      <div class="display_flex flex-row justify-between items-center">
+        <div class="flex m-2">Dashboard</div>
+        <div class="flex justify-content:end items-center ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-7 h-7 m-2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+          </svg>
+
+
+          <ion-thumbnail class="m-2" style="width: 40px; height: 40px; ">
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
+              style="border-radius: 50%;" />
+          </ion-thumbnail>
+          <p class="m-2">User name</p>
+          <ion-row  class="p-2">
+          <ion-button>TH</ion-button>
+            <ion-button>EN</ion-button>
+          </ion-row>
         </div>
 
-        <ion-card-content class="text_color_black">
-          <table class="table-fixed wide text_base">
-            <tbody>
-              <tr class="pl-2_5">
-                <td class="text-left ">เงินสด</td>
-                <td class="text-center font-semiblod">฿ 3,200</td>
-                <td class="text-right text_color_blue font-semiblod">32%</td>
-              </tr>
-              <tr class="pl-2_5">
-                <td class="text-left ">เงินโอน</td>
-                <td class="text-center font-semiblod">฿ 6,800</td>
-                <td class="text-right text_color_green font-semiblod">68%</td>
-              </tr>
-              <tr class="pl-2_5">
-                <td class="text-left ">ส่วนลดที่ใช้</td>
-                <td class="text-center font-semiblod">฿ 1,800</td>
-                <td class="text-right text_color_red font-semiblod">12%</td>
-              </tr>
-            </tbody>
-          </table>
-        </ion-card-content>
-      </ion-card>
-      <div class="display_flex flex-row font_style text">
-        <ion-card class="basis-2_4 ">
-          <ion-card-header class="text-center text_color_black">
-            <p class="text-xl font-medium ">จำนวนบิล</p>
-            <div class="rounded-lg border-4 mx-4 bg-[#4590f1]">
-            </div>
-            <p class="text-xl3 font-semiblod">75</p>
-          </ion-card-header>
+      </div>
 
+    </ion-title>
+  </ion-toolbar>
+  <ion-content [fullscreen]="true " class="theme-bg">
+    <div class="display_flex flex-row text font_style">
+      <div class="display_flex flex-col width1-3">
+        <ion-card>
+          <ion-card-header class="text_color_black  ">
+            <span class="text_color_black text_lg">ยอดขายวันนี้</span>
+
+            <p class="text_3xl font-medium">฿{{totalPrice}}</p>
+          </ion-card-header>
+          <div class="rounded-lg h-1 border-4 mx-4 bg-[#EFF2F6] opacity-60">
+          </div>
+
+          <ion-card-content class="text_color_black">
+            <table class="table-fixed wide text_base">
+              <tbody>
+                <tr class="pl-2_5">
+                  <td class="text-left ">เงินสด</td>
+                  <td class="text-center font-semiblod">฿ 3,200</td>
+                  <td class="text-right text_color_blue font-semiblod">32%</td>
+                </tr>
+                <tr class="pl-2_5">
+                  <td class="text-left ">เงินโอน</td>
+                  <td class="text-center font-semiblod">฿ 6,800</td>
+                  <td class="text-right text_color_green font-semiblod">68%</td>
+                </tr>
+                <tr class="pl-2_5">
+                  <td class="text-left ">ส่วนลดที่ใช้</td>
+                  <td class="text-center font-semiblod">฿ 1,800</td>
+                  <td class="text-right text_color_red font-semiblod">12%</td>
+                </tr>
+              </tbody>
+            </table>
+          </ion-card-content>
         </ion-card>
+        <div class="display_flex flex-row font_style text">
+          <ion-card class="basis-2_4 ">
+            <ion-card-header class="text-center text_color_black">
+              <p class="text-xl font-medium ">จำนวนบิล</p>
+              <div class="rounded-lg border-4 mx-4 bg-[#4590f1]">
+              </div>
+              <p class="text-xl3 font-semiblod">75</p>
+            </ion-card-header>
 
-        <ion-card class="basis-2_4 text">
-          <ion-card-header class="text-center text_color_black">
-            <p class="text-xl">เฉลี่ย/ต่อบิล</p>
-            <p class="text-xl3 font-semiblod">฿120</p>
+          </ion-card>
+
+          <ion-card class="basis-2_4 text">
+            <ion-card-header class="text-center text_color_black">
+              <p class="text-xl">เฉลี่ย/ต่อบิล</p>
+              <p class="text-xl3 font-semiblod">฿120</p>
+            </ion-card-header>
+
+          </ion-card>
+        </div>
+        <ion-card class="">
+          <ion-card-header class="text_color_black">
+            <span>รายงานยอดขาย</span>
+            <ion-list>
+              <ion-item>
+                <ion-select aria-label="week" placeholder="week">
+                  <ion-select-option value="จันทร์">จันทร์</ion-select-option>
+                  <ion-select-option value="อังคาร">อังคาร</ion-select-option>
+                  <ion-select-option value="พุธ">พุธ</ion-select-option>
+                  <ion-select-option value="พฤหัสบดี">พฤหัส</ion-select-option>
+                  <ion-select-option value="ศุกร์">ศุกร์</ion-select-option>
+                  <ion-select-option value="เสาร์">เสาร์</ion-select-option>
+                  <ion-select-option value="อาทิตย์">อาทิตย์</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
           </ion-card-header>
 
+          <ion-card-content class="text_color_black">
+            เงินกาโม่
+            เงินเหรียญ
+            เงินปลอม
+          </ion-card-content>
         </ion-card>
       </div>
-      <ion-card class="">
-        <ion-card-header class="text_color_black">
-          <span>รายงานยอดขาย</span>
-          <ion-list>
-            <ion-item>
-              <ion-select aria-label="week" placeholder="week">
-                <ion-select-option value="จันทร์">จันทร์</ion-select-option>
-                <ion-select-option value="อังคาร">อังคาร</ion-select-option>
-                <ion-select-option value="พุธ">พุธ</ion-select-option>
-                <ion-select-option value="พฤหัสบดี">พฤหัส</ion-select-option>
-                <ion-select-option value="ศุกร์">ศุกร์</ion-select-option>
-                <ion-select-option value="เสาร์">เสาร์</ion-select-option>
-                <ion-select-option value="อาทิตย์">อาทิตย์</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-        </ion-card-header>
-
-        <ion-card-content class="text_color_black">
-          เงินกาโม่
-          เงินเหรียญ
-          เงินปลอม
-        </ion-card-content>
-      </ion-card>
-    </div>
-    <ion-card class="width2-3">
-      <ion-card-header class="flex-row">
-        <!-- <ion-card-title class="space-x-0">Stock</ion-card-title>
+      <ion-card class="width2-3">
+        <ion-card-header class="flex-row">
+          <!-- <ion-card-title class="space-x-0">Stock</ion-card-title>
         <ion-card-subtitle >Card Subtitle</ion-card-subtitle>
         <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-        <div class="flex-header display_flex ">
-          <div class="header-left text_color_black width1-3">
-            <p class="font-semiblod text_lg">Stock</p>
-            <p class="font-semiblod text_lg">รายการ</p>
-          </div>
-          <div class="header-right text_color_black width1-3">
-            <p>Sort by :</p>
-            <p class="underline">สินค้าทั้งหมด</p>
-          </div>
+          <div class="flex-header display_flex ">
+            <div class="header-left text_color_black width1-3">
+              <p class="font-semiblod text_lg">Stock</p>
+              <p class="font-semiblod text_lg">รายการ</p>
+            </div>
+            <div class="header-right text_color_black width1-3">
+              <p>Sort by :</p>
+              <p class="underline">สินค้าทั้งหมด</p>
+            </div>
 
-        </div>
-      </ion-card-header>
+          </div>
+        </ion-card-header>
 
-      <!-- <div class="display_flex flex-row wide">
+        <!-- <div class="display_flex flex-row wide">
         <span class="text-center  w-20">รูปภาพ</span>
         <span class="text-center  w-28">ชื่อสินค้า</span>
         <span class="text-center  w-24">catagory</span>
@@ -108,27 +131,27 @@
         <span class="text-center  w-24">status</span>
         <span class="text-center  w-24">คงเหลือ</span>
       </div> -->
-      <table class="table-fixed wide text">
-        <thead class="text_color_black">
-          <tr>
-            <th class="font-medium">รูปภาพ</th>
-            <th class="font-medium">ชื่อสินค้า</th>
-            <th class="font-medium">Catagory</th>
-            <th class="font-medium">ราคา</th>
-            <th class="font-medium">Status</th>
-            <th class="font-medium">คงเหลือ</th>
-          </tr>
-        </thead>
-        <tbody class="table-fixed wide text" *ngFor="let item of foods">
-          <tr class="pl-2_5 text_color_black">
-            <td class="text-center"> <img src="{{item.pic_url}}" alt="test"></td>
-            <td class="text-center">{{item.name}}</td>
-            <td class="text-center">{{item.fg_name}}</td>
-            <td class="text-center">{{item.price}}</td>
-            <td class="text-center">{{item.status}}</td>
-            <td class="text-center">{{item.total}}</td>
-          </tr>
-          <!-- <tr class="pl-2_5 text">
+        <table class="table-fixed wide text">
+          <thead class="text_color_black">
+            <tr>
+              <th class="font-medium">รูปภาพ</th>
+              <th class="font-medium">ชื่อสินค้า</th>
+              <th class="font-medium">Catagory</th>
+              <th class="font-medium">ราคา</th>
+              <th class="font-medium">Status</th>
+              <th class="font-medium">คงเหลือ</th>
+            </tr>
+          </thead>
+          <tbody class="table-fixed wide text" *ngFor="let item of foods">
+            <tr class="pl-2_5 text_color_black">
+              <td class="text-center"> <img src="{{item.pic_url}}" alt="test"></td>
+              <td class="text-center">{{item.name}}</td>
+              <td class="text-center">{{item.fg_name}}</td>
+              <td class="text-center">{{item.price}}</td>
+              <td class="text-center">{{item.status}}</td>
+              <td class="text-center">{{item.total}}</td>
+            </tr>
+            <!-- <tr class="pl-2_5 text">
             <td class="text-center">Image</td>
             <td class="text-center">Item name</td>
             <td class="text-center">Item type</td>
@@ -144,9 +167,9 @@
             <td class="text-center">Item status</td>
             <td class="text-center">Item amount</td>
           </tr> -->
-        </tbody>
-      </table>
+          </tbody>
+        </table>
 
-    </ion-card>
-  </div>
-</ion-content>
+      </ion-card>
+    </div>
+  </ion-content>

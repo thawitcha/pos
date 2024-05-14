@@ -23,6 +23,13 @@
   --ion-text-color: #222;
 }
 
+.bg-color-prim{
+  background-color: var(--ion-background-color-bg);
+}
+
+.light{
+  background-color: #ffffff;
+}
 
 @media (prefers-color-scheme: dark){
 

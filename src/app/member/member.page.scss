@@ -1,0 +1,153 @@
+.theme-top-bar {
+    --background: var(--ion-background-color-top);
+
+    @media (prefers-color-scheme: dark) {
+        --background: var(--ion-background-color-top-dark);
+    }
+
+    .theme_txt {
+        --color: white;
+    }
+
+}
+
+// bg-blend-multiply {
+//     background-blend-mode: multiply;
+// }
+
+// bg-blend-color {
+//     background-blend-mode: #971111;
+// }
+
+shadow-inner {
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.display_flex {
+    display: flex;
+    
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.text {
+    .text-left {
+        text-align: left;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .text_color_blue {
+        color: #2e90f1;
+    }
+
+    .text_color_green {
+        color: #12c818;
+    }
+
+    .text_color_red {
+        color: #ff6868;
+    }
+
+    .text_color_black {
+        color: black;
+    }
+
+}
+.font_style {
+    .text-xl3 {
+      font-size: 50px;
+      /* 30px */
+      line-height: 46px;
+      /* 36px */
+    }
+  
+    .text-xl {
+      font-size: 20px;
+      /* 20px */
+      line-height: 28px;
+      /* 28px */
+    }
+  
+    .font-semiblod {
+      font-weight: 550;
+    }
+  
+    .font-medium {
+      font-weight: 500;
+    }
+  
+    .text_base {
+      font-size: 1rem;
+      /* 16px */
+      line-height: 1.5rem;
+      /* 24px */
+    }
+  
+    .text_lg {
+      font-size: 1.125rem;
+      /* 18px */
+      line-height: 1.75rem;
+      /* 28px */
+    }
+  
+    .text_2xl {
+      font-size: 1.5rem;
+      /* 24px */
+      line-height: 2rem;
+      /* 32px */
+    }
+  
+    .text_3xl {
+      font-size: 1.875rem;
+      /* 30px */
+      line-height: 2.25rem;
+      /* 36px */
+    }
+  
+    .text_color_blue {
+      color: #2e90f1;
+    }
+  
+    .text_color_green {
+      color: #12c818;
+    }
+  
+    .text_color_red {
+      color: #ff6868;
+    }
+  
+    .text_color_black {
+      color: black;
+    }
+  }
+  .width1-3 {
+    width: 33.333333%;
+  }
+  
+  .width2-3 {
+    width: 66.666667%;
+  }  
+  
+  .input-background {
+    background-color: #a0faff; /* กำหนดสีฟ้าอ่อนให้เป็นพื้นหลัง */
+    border-radius: 15px; /* กำหนดขอบโค้ง */
+  }
+
+//   --background{
+//     background-color: #a0faff;
+//   }
+
+  ion-button{
+    background-color: #a0faff;
+  }
+  
+  

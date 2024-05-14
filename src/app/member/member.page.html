@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>member</ion-title>
+  <ion-toolbar class="theme-top-bar ">
+    <ion-title class="theme_txt">สมาชิก</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,61 @@
       <ion-title size="large">member</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card class="flex shadow-inner p-4">
+    <ion-card class="width2-3  h-96">
+      <ion-card-content class="bg-color-prim">
+        <ion-button>ข้อมูลสมาชิก</ion-button>
+        <ion-input class="light" label="" placeholder="กรอก ID" ></ion-input>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class=" width1-3 ">
+      <p class=" text-center m-5">เพิ่มสมาชิก</p>
+      <div class="flex justify-between items-center m-8 ">
+        <div>ID </div>
+        <ion-input class="items-center w-44 input-background" label="" placeholder="กรอก ID"></ion-input>
+      </div>
+      <div class="flex justify-between items-center m-8">
+        <div>ชื่อ </div>
+        <ion-input class="items-center w-44 input-background " label="" placeholder="กรอกชื่อ"></ion-input>
+      </div>
+      <div class="flex justify-between items-center m-8">
+        <div>วันเกิด </div>
+        <ion-input class="items-center w-44 input-background" label="" placeholder="กรอกวันเกิด"></ion-input>
+      </div>
+      <div class="flex justify-between items-center m-8">
+        <div>เบอร์โทร </div>
+        <ion-input class="items-center w-44 input-background" label="" placeholder="กรอกเบอร์โทร"></ion-input>
+      </div>
+      <div class="flex justify-between items-center m-8">
+        <div>ประเภท </div>
+        <ion-button id="popover-button" color="background-color-botton">เลือกประเภท</ion-button>
+        <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                <ion-item [button]="true" [detail]="false">Option 1</ion-item>
+                <ion-item [button]="true" [detail]="false">Option 2</ion-item>
+                <ion-item [button]="true" id="nested-trigger">More options...</ion-item>
+
+                <ion-popover trigger="nested-trigger" [dismissOnSelect]="true" side="start">
+                  <ng-template>
+                    <ion-content>
+                      <ion-list>
+                        <ion-item [button]="true" [detail]="false">Nested option</ion-item>
+                      </ion-list>
+                    </ion-content>
+                  </ng-template>
+                </ion-popover>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+      </div>
+      <div class="flex justify-between mb-32 mt-32">
+      <ion-button class="ml-4 mr-4" color="success" >บันทึก</ion-button>
+      <ion-button class="ml-4 mr-4" color="danger">ยกเลิก</ion-button>
+      </div>
+    </ion-card>
+  </ion-card>
 </ion-content>

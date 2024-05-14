@@ -36,7 +36,14 @@
     .theme_txt {
       --color: white;
     }
+    
   }
+  .toolbar-title {
+    display: flex;
+    justify-content: center;
+    justify-content: start;
+}
+
 
 .width1-3 {
   width: 33.333333%;
