@@ -136,27 +136,28 @@
         <span class="text-center  w-24">status</span>
         <span class="text-center  w-24">คงเหลือ</span>
       </div> -->
-        <table class="table-fixed wide text">
-          <thead class="text_color_black">
-            <tr>
-              <th class="font-medium">รูปภาพ</th>
-              <th class="font-medium">ชื่อสินค้า</th>
-              <th class="font-medium">Catagory</th>
-              <th class="font-medium">ราคา</th>
-              <th class="font-medium">Status</th>
-              <th class="font-medium">คงเหลือ</th>
-            </tr>
-          </thead>
-          <tbody class="table-fixed wide text" *ngFor="let item of foods">
-            <tr class="pl-2_5 text_color_black">
-              <td class="text-center"> <img src="{{item.pic_url}}" alt="test"></td>
-              <td class="text-center">{{item.name}}</td>
-              <td class="text-center">{{item.fg_name}}</td>
-              <td class="text-center">{{item.price}}</td>
-              <td class="text-center">{{item.status}}</td>
-              <td class="text-center">{{item.total}}</td>
-            </tr>
-            <!-- <tr class="pl-2_5 text">
+      <table class="table-fixed wide text">
+        <thead class="text_color_black ">
+          <tr>
+            <th class="font-medium w-[100px] text-left "><span class="ml-[25px]">รูปภาพ</span> </th>
+            <th class="font-medium">ชื่อสินค้า</th>
+            <th class="font-medium">Catagory</th>
+            <th class="font-medium">ราคา</th>
+            <th class="font-medium">Status</th>
+            <th class="font-medium">คงเหลือ</th>
+          </tr>
+        </thead>
+        <!-- border-8 border-gray-500 -->
+        <tbody class="table-fixed wide text " *ngFor="let item of foods">
+          <tr class="items-center text_color_black border-y-2 border-slate-200"> 
+            <td class="justify-center flex"> <img src="{{item.pic_url}}" alt="test" class="items-center object-cover h-[75px] w-[100px]  p-[8px] "></td>
+            <td class="text-center">{{item.name}}</td>
+            <td class="text-center">{{item.fg_name}}</td>
+            <td class="text-center">{{item.price}}</td>
+            <td class="text-center">{{item.status}}</td>
+            <td class="text-center">{{item.total}}</td>
+          </tr>
+          <!-- <tr class="pl-2_5 text">
             <td class="text-center">Image</td>
             <td class="text-center">Item name</td>
             <td class="text-center">Item type</td>
@@ -172,8 +173,8 @@
             <td class="text-center">Item status</td>
             <td class="text-center">Item amount</td>
           </tr> -->
-          </tbody>
-        </table>
+        </tbody>
+      </table>
 
       </ion-card>
     </div>
