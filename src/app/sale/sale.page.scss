@@ -32,18 +32,22 @@
   border-radius: 0.5rem;
   /* 8px */
 }
+
 .btn {
   // box-shadow: rgba(0, 0, 0, 0.24) 1px 2px 4px;
   border-radius: 10px;
   font-size: 18px;
   overflow: hidden;
 }
+
 .buttons {
   text-align: center;
+
   .btn {
-      width: 107px;
-      height: 50px;
+    width: 107px;
+    height: 50px;
   }
+
   // .btn2 {
   //     height: 50px;
   //     border-radius: 10px;
@@ -99,33 +103,67 @@ ion-col {
 .theme-botton {
   --background: var(--ion-background-color-botton)
 }
-.theme-botton2{
+
+.theme-botton2 {
   --background: var(--ion-background-color-botton2)
 }
-.theme-text{
+
+.theme-text {
   color: black;
 }
+
 .theme-top-bar {
   --background: var(--ion-background-color-top);
-    @media (prefers-color-scheme: dark) {
-      --background: var(--ion-background-color-top-dark);
-    }
-    .theme_txt {
-      --color: white;
-    }
+
+  @media (prefers-color-scheme: dark) {
+    --background: var(--ion-background-color-top-dark);
   }
-  .custom-button {
-    width: 130px; /* กำหนดความกว้าง */
-    height: 30px; /* กำหนดความสูง */
+
+  .theme_txt {
+    --color: white;
   }
-  .full-width-button {
-  width: 9.1vw; /* ให้ขนาดของปุ่มมีความกว้างเท่ากับ 90% ของ viewport width */
-}
-.custom-button2P{
-  width: 130px; /* กำหนดความกว้าง */
-  height: 30px; /* กำหนดความสูง */
-}
-.grid-button {
-  width: 100%; /* กำหนดให้ขนาดปุ่มเท่ากับคอลัม */
 }
 
+.custom-button {
+  --border-radius: 10px;
+}
+
+.full-width-button {
+  width: 9.1vw;
+  /* ให้ขนาดของปุ่มมีความกว้างเท่ากับ 90% ของ viewport width */
+}
+
+.custom-button2P {
+  width: 130px;
+  /* กำหนดความกว้าง */
+  height: 30px;
+  /* กำหนดความสูง */
+}
+
+.grid-button {
+  width: 100%;
+  /* กำหนดให้ขนาดปุ่มเท่ากับคอลัม */
+}
+
+.theme-bg {
+  --background: var(--ion-background-color-bg)
+}
+
+.text-bold{
+  font-weight: 700;
+}
+.bg-button{
+  --background: var(--ion-color-success)
+}
+.border-radius{
+  border-radius: 10px;
+}
+.bg-change{
+  background: #F5F8FF;
+}
+.bg-botton-number{
+  --background: var(--ion-background-color-botton-number)
+}
+.bg-botton-cancle{
+  --background: var(--ion-background-color-botton-cancle)
+} 
