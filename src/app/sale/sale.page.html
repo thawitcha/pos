@@ -98,9 +98,9 @@
 
     </ion-row>
   </ion-grid> -->
-  <div class="flex flex-row ">
+  <div class="flex flex-row theme-bg ">
 
-    <ion-card class="w-2/3">
+    <ion-card class="w-2/3 border-r border-black">
       <ion-card-header class="">
         <!-- <ion-card-title class="space-x-0">Stock</ion-card-title>
         <ion-card-subtitle >Card Subtitle</ion-card-subtitle>
@@ -110,7 +110,7 @@
           <span>:123456</span>
           <span>24 เมษายน 2567</span>
           <span>13.00 น.</span>
-          <span>+ เพิ่มสินค้า</span>
+          <ion-button class="bg-button">เพิ่มสินค้า</ion-button>
         </div>
       </ion-card-header>
       <table class="w-full">
@@ -142,9 +142,9 @@
     <div class="flex flex-col w-1/3">
       <div class="display_flex flex-row font_style text">
         <div class="w-full">
-          <ion-button class="custom-button"> พักบิล </ion-button>
-          <ion-button class="custom-button"> รายการพักบิล </ion-button>
-          <ion-button class="full-width-button"> ส่วนลดที่ใช้ และ ภาษี </ion-button>
+          <ion-button class="w-[22%] custom-button theme-botton"> พักบิล </ion-button>
+          <ion-button class="w-[29%] custom-button theme-botton"> รายการพักบิล </ion-button>
+          <ion-button class="w-[46%] custom-button theme-botton"> ส่วนลด และ ภาษี </ion-button>
         </div>
         <div>
           <ion-card>
@@ -164,46 +164,53 @@
             </ion-card-header>
           </ion-card>
         </div>
-        <div class="w-full">
-          <ion-button> เงินสด </ion-button>
-          <ion-button> เงินโอน </ion-button>
-          <ion-button> ค้นหาสมาชิก </ion-button>
-          <ion-button> เพิ่มสมาชิก</ion-button>
+        <div class="w-full flex">
+          <ion-button class="w-[23%] custom-button theme-botton"> เงินสด </ion-button>
+          <ion-button class="w-[23%] custom-button theme-bg text-black"> เงินโอน </ion-button>
+          <div class="flex items-center w-[39%] custom-button mx-0.5"> <ion-input class="light theme-bg text-black" label=""
+              placeholder="ค้นหาสมาชิก"></ion-input>
+          </div>
+          <ion-button class="w-[10%] bg-button "> เพิ่มสมาชิก</ion-button>
         </div>
-        <ion-card class="basis-2_4 text">
-          <ion-card-header class="text-center text_color_black">
-            <p class="text-xl">เฉลี่ย/ต่อบิล</p>
-            <p class="text-xl3 font-semiblod">฿120</p>
-          </ion-card-header>
-
-        </ion-card>
+        <div class="flex my-3 w-full">
+          <div class="flex items-center w-[39%] custom-button mx-0.5"> 
+            <ion-item>
+              <ion-input label="เงินสด" type="number" labelPlacement="stacked" placeholder="700"></ion-input>
+            </ion-item>
+          </div>
+          <ion-button class="w-[23%] custom-button h-[45px] bg-botton-cancle"> ล้าง </ion-button>
+          <div class="flex w-[34%] bg-change border-radius mx-0.5">
+            <span class="w-[40%] mx-0.5 my-1">เงินทอน</span>
+            <span class="justify-end items-center w-[60%] flex">55.00</span>
+          </div>
+        </div>
       </div>
 
-      <ion-grid fixed>
-        <ion-col class="">
-          <ion-row class="w-full ">
-            <ion-button class="w-1/3  " >1</ion-button>
-            <ion-button class="w-1/3  ">5</ion-button>
-            <ion-button class="w-1/3  m-0">10</ion-button>
+      <ion-grid fixed class="p-0">
+        <ion-col class="p-0">
+          <ion-row class="w-full p-0 custom-button h-[70px] ">
+            <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">1</ion-button>
+            <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">5</ion-button>
+            <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">10</ion-button>
           </ion-row>
-          <ion-row class="w-full">
-            <ion-button class="grid-button">20</ion-button>
-            <ion-button class="grid-button">50</ion-button>
-            <ion-button class="grid-button">100</ion-button>
+          <ion-row class="w-full h-[70px]">
+            <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">20</ion-button>
+            <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">50</ion-button>
+            <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">100</ion-button>
           </ion-row>
-          <ion-row class="w-full">
-            <ion-button class="btn grid-button">500</ion-button>
-            <ion-button class="btn grid-button">1000</ion-button>
-            <ion-button class="btn grid-button">พอดี</ion-button>
+          <ion-row class="w-full h-[70px]">
+            <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">500</ion-button>
+            <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">1000</ion-button>
+            <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-button ">พอดี</ion-button>
           </ion-row>
         </ion-col>
       </ion-grid>
-
-      <ion-card-content class="text_color_black">
-        เงินกาโม่
-        เงินเหรียญ
-        เงินปลอม
-      </ion-card-content>
+      <ion-checkbox labelPlacement="end" class="w-fit ml-auto mr-4 my-4">พิมพ์ใบเสร็จ</ion-checkbox>
+      <ion-row class="w-full flex p-0 custom-button ">
+        <ion-button class="w-[24%] custom-button h-[40px] theme-bg text-black"> ยกเลิก </ion-button>
+        <ion-button class="w-[24%] custom-button h-[40px] theme-botton"> ใบแจ้ง </ion-button>
+        <ion-button class="w-[48%] custom-button bg-button h-[40px]"> เช็คบิล </ion-button>
+      </ion-row>
     </div>
   </div>
 </ion-content>
