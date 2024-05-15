@@ -38,5 +38,5 @@ export class SalePage implements OnInit {
       console.log(this.totalPrice); // แสดงค่าราคารวมในคอนโซล
     })
   }
-  
+  //////////
 }
