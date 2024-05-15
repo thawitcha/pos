@@ -7,30 +7,55 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="flex shadow-inner p-6 theme-bg">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">history</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-card class="flex shadow-inner p-6 theme-bg">
-   
-      <ion-card class="flex justify-between width2-3  mr-4 ml-4">
-        <ion-card-content>
-        <ion-button>sssssss</ion-button>
-        <ion-button>sssssss</ion-button>
+  <ion-card class="">
+    <ion-card class="flex justify-between width2-3  mr-4 ml-4">
+      
+      <ion-card-content class="flex">
+        <ion-button class="custom-button">รายบิน</ion-button>
+        <ion-button class="custom-button">รายวัน</ion-button>
       </ion-card-content>
-      <ion-card-content>
-          <ion-button>sssssssssss</ion-button>
+
+      <ion-card-content class="flex">
+        <ion-button class="bg-button">Export</ion-button>
       </ion-card-content>
+      
+      <table class="flex">
+        <thead>
+          <tr>
+            <th class="font-medium "><span class="ml-[25px]">ID</span> </th>
+            <th class="font-medium">วันที่</th>
+            <th class="font-medium">เวลา</th>
+            <th class="font-medium">ประเภทชำระ</th>
+            <th class="font-medium">จำนวนเงิน</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ID</td>
+            <td>วันที่</td>
+            <td>เวลา</td>
+            <td>ประเภทชำระ</td>
+            <td>จำนวนเงิน</td>
+          </tr>
+        </tbody>
+      </table>
+    
     </ion-card>
- 
+  </ion-card>
+
+
 
     <ion-card class=" width1-3 mr-4 ml-4 tb ">
       <ion-card-content>
-
+        sssssssss
       </ion-card-content>
     </ion-card>
-  </ion-card>
+  
 </ion-content>

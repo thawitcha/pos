@@ -19,3 +19,12 @@
       .width2-3 {
         width: 66.666667%;
       } 
+      .bg-button{
+        --border-radius: 10px;
+        --background: var(--ion-color-success)
+        
+      }
+      .custom-button{
+        --border-radius :10px;
+        
+      }

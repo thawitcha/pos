@@ -200,15 +200,16 @@ shadow-inner {
   
 } 
 
-$border-radius-top-left: 10px;
-$border-radius-top-right: 10px;
-$border-radius-bottom-right: 10px;
-$border-radius-bottom-left: 10px;
+// $border-radius-top-left: 10px;
+// $border-radius-top-right: 10px;
+// $border-radius-bottom-right: 10px;
+// $border-radius-bottom-left: 10px;
 
 .bg-botton-warning{
-  font-size: 10px;
   --border-radius: 10px;
-  --background: var(--ion-background-color-botton-warning)
+  background-color: #ffc800;
+  font-size: 10px;
+  // --background: var(--ion-background-color-botton-warning)
 }
 .bg-botton-warning2{
   font-size: 10px;
