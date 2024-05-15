@@ -20,7 +20,7 @@ export class SalePage implements OnInit {
   ngOnInit(): void {
     this.loadFood()
     this.cal()
-    
+    //////
   }
   loadFood() {
 
