@@ -1,3 +1,11 @@
-.bg-top-table{
-   background: var(--ion-background-color-top-table);
+.bg-top-table {
+    background: var(--ion-background-color-top-table);
+}
+
+.border-radius {
+    --border-radius: 10px;
+}
+
+.border-radius-orcle {
+    --border-radius: 23px;
 }
