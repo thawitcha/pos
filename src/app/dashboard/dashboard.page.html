@@ -106,11 +106,7 @@
             </ion-list>
           </ion-card-header>
 
-          <ion-card-content class="text_color_black">
-            เงินกาโม่
-            เงินเหรียญ
-            เงินปลอม
-          </ion-card-content>
+          <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [title]="chartOptions.title"></apx-chart>
         </ion-card>
       </div>
       <ion-card class="width2-3">
