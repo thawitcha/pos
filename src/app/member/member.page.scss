@@ -21,6 +21,7 @@
 
 shadow-inner {
     box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+
 }
 
 .display_flex {
@@ -138,16 +139,49 @@ shadow-inner {
   }  
   
   .input-background {
-    background-color: #a0faff; /* กำหนดสีฟ้าอ่อนให้เป็นพื้นหลัง */
-    border-radius: 15px; /* กำหนดขอบโค้ง */
+    background-color: #d0fdff; /* กำหนดสีฟ้าอ่อนให้เป็นพื้นหลัง */
+    border-radius: 10px; /* กำหนดขอบโค้ง */
   }
-
+  .bg-sky{
+    background-color: #d0fdff;
+  }
+  .input-header{
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
 //   --background{
 //     background-color: #a0faff;
 //   }
 
-  ion-button{
-    background-color: #a0faff;
+  // ion-button{
+  //   background-color: #a0faff;
+  // }
+  
+  .table-fixed {
+    table-layout: fixed;
   }
-  
-  
+
+  .custom-buttom{
+    --border-radius :10px;
+    
+  }
+  .custom-buttom-h{
+    --border-radius :10px;
+    --background: #ffffff;
+    --color:black;
+  }
+  .custom-buttom-h2{
+    --border-radius :10px;
+    --background: #d0fdff;
+    --color:black;
+  }
+  .buttom-success{
+  --background-color: #12C818;
+  --colors: white;
+  --border-radius: 10px;
+}
+.buttom-danger{
+  --background-color: red;
+  --colors: white;
+  --border-radius: 10px;
+}
