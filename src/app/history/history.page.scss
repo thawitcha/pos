@@ -1,0 +1,21 @@
+.theme-top-bar {
+    --background: var(--ion-background-color-top);
+      @media (prefers-color-scheme: dark) {
+        --background: var(--ion-background-color-top-dark);
+      }
+      .theme_txt {
+        --color: white;
+      }
+      
+    }
+    
+    .theme-bg {
+        --background: var(--ion-background-color-bg)
+    }
+    .width1-3 {
+        width: 33.333333%;
+      }
+      
+      .width2-3 {
+        width: 66.666667%;
+      } 
