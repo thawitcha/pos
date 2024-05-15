@@ -3,14 +3,59 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>add_item</ion-title>
+    <ion-title>เพิ่มสินค้า</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">add_item</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  
+    <div class="flex flex-row w-full">
+      <ion-searchbar placeholder="ค้นหา" class="w-[25%]"></ion-searchbar>
+      <div class="flex flex-row w-full justify-between">
+        <div class="flex flex-row w-full ">
+        <span class="flex text-center items-center">Sort by: </span>
+        <span class="flex text-center">สินค้าที่แสดง</span>
+        </div>
+        <ion-list>
+          <ion-item>
+            <ion-select aria-label="Fruit" interface="popover" placeholder="ค้นหา">
+              <ion-select-option value="apples">Apples</ion-select-option>
+              <ion-select-option value="oranges">Orang es</ion-select-option>
+              <ion-select-option value="bananas">Bananas</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-button class="bg-button">เพิ่ม</ion-button>
+      </div>
+      <div class="w-full flex flex-grid">
+        <table>
+          <thead>
+            <tr>
+              <th>รูปภาพ</th>
+              <th>Code</th>
+              <th>ชื่อกลุ่ม</th>
+              <th>สถานะ</th>
+              <th>ลำดับ</th>
+              <th>กลุ่ม</th>
+              <th>หมวดหมู่</th>
+              <th>แก้ไข</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>เทส</td>
+              <td>เทส</td>
+              <td>เทส</td>
+              <td>เทส</td>
+              <td>เทส</td>
+              <td>เทส</td>
+              <td>เทส</td>
+              <td>เทส</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
 </ion-content>
