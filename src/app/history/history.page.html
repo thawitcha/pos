@@ -20,8 +20,17 @@
 
       <ion-card-content class="flex justify-between p-0 m-0">
         <ion-card-content class="pb-0">
-          <ion-button class="custom-button">รายบิล</ion-button>
-          <ion-button class="custom-button">รายวัน</ion-button>
+          
+          <ion-segment class="flex " value="custom">
+            <ion-segment-button class="custom-button " value="a" (click)="bill()">
+              <ion-label>รายบิล</ion-label>
+            </ion-segment-button>
+            
+            <ion-segment-button class="custom-button" value="b" (click)="day()">
+              <ion-label>รายวัน</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+
         </ion-card-content>
         <ion-card-content class="pb-0 ">
           <ion-button class="bg-button">Export</ion-button>
@@ -40,68 +49,18 @@
           </tr>
         </thead>
 
-        <tbody class="">
-          <tr>
-            <td class="h-10">1234</td>
-            <td>11/11/11</td>
-            <td>11:11</td>
-            <td>เงินสด</td>
-            <td>111111</td>
-            <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg></td>
-          </tr>
+        <tbody class="" *ngFor="let item of history">
           <tr class="h-10">
-            <td class="">1234</td>
-            <td>11/11/11</td>
-            <td>11:11</td>
+            <td>{{item.order_id_main}}</td>
+            <td>{{item.date_time | date:'dd/MM/yyyy'}}</td>
+            <td>{{item.date_time | date:'HH:mm:ss'}}</td>
             <td>เงินสด</td>
-            <td>111111</td>
+            <td>{{item.total_price}}</td>
             <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg></td>
           </tr>
-          <tr class="h-10">
-            <td class="">1234</td>
-            <td>11/11/11</td>
-            <td>11:11</td>
-            <td>เงินสด</td>
-            <td>111111</td>
-            <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg></td>
-          </tr>
-
-          <tr class="h-10">
-            <td class="">1234</td>
-            <td>11/11/11</td>
-            <td>11:11</td>
-            <td>เงินสด</td>
-            <td>111111</td>
-            <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg></td>
-          </tr>
-          <tr class="h-10">
-            <td >1234</td>
-            <td>11/11/11</td>
-            <td>11:11</td>
-            <td>เงินสด</td>
-            <td>111111</td>
-            <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg></td>
-          </tr>
-          <tr class="h-10">
-            <td class="">1234</td>
-            <td>11/11/11</td>
-            <td>11:11</td>
-            <td>เงินสด</td>
-            <td>111111</td>
-            <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-            </svg></td>
-          </tr>
+          
         </tbody>
       </table>
 
@@ -120,4 +79,8 @@
     </ion-card>
 
   </ion-card-content>
+  
+  
+  
+ 
 </ion-content>

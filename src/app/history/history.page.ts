@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./history.page.scss'],
 })
 export class HistoryPage implements OnInit {
+ order_id_main:number | undefined
+ getBackend :any 
+ history : any=[]
+  constructor( private backEnd: HttpClient) { }
 
-  constructor() { }
+  ngOnInit(): void {
+    // this.loadFood()
 
-  ngOnInit() {
   }
+  // loadFood() {
 
+  //   this.getBackend = this.backEnd.get('http://192.168.1.169/POSproject/index.php/Bill/getBillHistory').subscribe((data: any) => {
+  //     this.history = data;
+  //     console.log(this.history);
+
+  //   })
+  // }
+bill(){
+  this.getBackend = this.backEnd.get('http://192.168.1.169/POSproject/index.php/Bill/getBillHistory').subscribe((data: any) => {
+    this.history = data;
+
+    console.log(this.history);
+
+  })
+}
+day(){
+
+  this.getBackend = this.backEnd.get('http://192.168.1.169/POSproject/index.php/Bill/getBillHistory').subscribe((data: any) => {
+    this.history = data;
+
+
+  })
+
+}
 }
