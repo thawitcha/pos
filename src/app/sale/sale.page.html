@@ -11,48 +11,58 @@
           <ion-title class="theme_txt">หน้าขาย</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-card-header class="">
-       
-        <div class="w-full flex justify-between">
-          <span>Order ID</span>
-          <span>:123456</span>
-          <span>24 เมษายน 2567</span>
-          <span>13.00 น.</span>
-          <ion-button class="bg-button">เพิ่มสินค้า</ion-button>
+      <ion-card-header class="w-full ">
+        <div class="w-full flex">
+          <div class="w-1/2 flex justify-between ">
+            <div class="w-full text-center flex items-center">
+              <span>Order ID</span>
+              <span>:123456</span>
+            </div>
+            <div class="w-full flex justify-between items-center">
+              <span >24 เมษายน 2567</span>
+              <span>13.00 น.</span>
+            </div>
+
+          </div>
+          <div class="w-1/2 flex justify-end ">
+            <ion-button class="bg-button border-radius2">+ เพิ่มสินค้า</ion-button>
+          </div>
         </div>
       </ion-card-header>
-      <table class="w-full">
-        <thead class="">
-          <tr>
-            <th class="">ลำดับ</th>
+      <div class="w-full px-5"> 
+      <table class="w-full px-5 ">
+        <thead class="bg-top-table ">
+          <tr class="">
+            <th>ลำดับ</th>
             <th class="text-left">ชื่อสินค้า</th>
-            <th class="">ราคา</th>
-            <th class="">จำนวน</th>
-            <th class="">รวม</th>
-            <th class="">แก้ไข</th>
+            <th>ราคา</th>
+            <th>จำนวน</th>
+            <th>รวม</th>
+            <th>แก้ไข</th>
           </tr>
         </thead>
-        <tbody class="">
-          <tr class="">
-            <td class="text-center">1</td>
-            <td>Coke</td>
-            <td class="text-center">price</td>
-            <td class="text-center">count</td>
-            <td class="text-center">total</td>
+        <tbody>
+          <tr *ngFor="let item of foods; let i = index">
+            <td class="text-center">{{i+1}}</td>
+            <td>{{item.cg_name}}</td>
+            <td class="text-center">{{item.price}}</td>
+            <td class="text-center"><ion-input></ion-input></td>
+            <td class="text-center">{{item.total}}</td>
 
           </tr>
 
         </tbody>
       </table>
-
+    </div>
     </ion-card>
 
     <div class="flex flex-col w-1/3">
       <div class="display_flex flex-row font_style text">
         <div class="w-full">
-          <ion-button class="w-[22%] custom-button theme-botton"> พักบิล </ion-button>
-          <ion-button class="w-[29%] custom-button theme-botton"> รายการพักบิล </ion-button>
-          <ion-button class="w-[46%] custom-button theme-botton"> ส่วนลด และ ภาษี </ion-button>
+          <ion-button class="w-auto custom-button theme-botton">พักบิล </ion-button>
+          <ion-button class="w-auto custom-button theme-botton">รายการพักบิล </ion-button>
+          <ion-button class="w-auto custom-button theme-botton">ส่วนลด และ ภาษี </ion-button>
+          <ion-button class="w-auto custom-button theme-bg text-black">สมาชิก</ion-button>
         </div>
         <div>
           <ion-card>
@@ -73,20 +83,17 @@
           </ion-card>
         </div>
         <div class="w-full flex">
-          <ion-button class="w-[23%] custom-button theme-botton"> เงินสด </ion-button>
-          <ion-button class="w-[23%] custom-button theme-bg text-black"> เงินโอน </ion-button>
-          <div class="flex items-center w-[39%] custom-button mx-0.5"> <ion-input class="light theme-bg text-black" label=""
-              placeholder="ค้นหาสมาชิก"></ion-input>
-          </div>
-          <ion-button class="w-[10%] bg-button "> เพิ่มสมาชิก</ion-button>
+          <ion-button class="w-auto custom-button theme-botton"> เงินสด </ion-button>
+          <ion-button class="w-auto custom-button theme-bg text-black"> เงินโอน </ion-button>
+          <ion-button class="w-auto custom-button theme-bg text-black"> ตัดบัตร </ion-button>
         </div>
         <div class="flex my-3 w-full">
-          <div class="flex items-center w-[39%] custom-button mx-0.5"> 
+          <div class="flex items-center w-[39%] custom-button mx-0.5">
             <ion-item>
               <ion-input label="เงินสด" type="number" labelPlacement="stacked" placeholder="700"></ion-input>
             </ion-item>
           </div>
-          <ion-button class="w-[23%] custom-button h-[45px] bg-botton-cancle"> ล้าง </ion-button>
+          
           <div class="flex w-[34%] bg-change border-radius mx-0.5">
             <span class="w-[40%] mx-0.5 my-1">เงินทอน</span>
             <span class="justify-end items-center w-[60%] flex">55.00</span>
@@ -109,6 +116,7 @@
           <ion-row class="w-full h-[70px]">
             <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">500</ion-button>
             <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-botton-number">1000</ion-button>
+            <ion-button class="w-[23%]  custom-button h-[45px] bg-botton-cancle"> ล้าง </ion-button>
             <ion-button class="w-[32%]  custom-button text-bold text-2xl bg-button ">พอดี</ion-button>
           </ion-row>
         </ion-col>

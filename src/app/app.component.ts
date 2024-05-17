@@ -10,7 +10,7 @@ export class AppComponent {
     { title: 'Dashboard', url: '/dashboard' },
     { title: 'หน้าเพิ่มสินค้า', url: '/add-item'},
     { title: 'หน้าขาย', url: '/sale'},
-    { title: 'สินค้าทั้งหมด', url: '/product'},
+    { title: 'เพิ่มสินค้า', url: '/product'},
     { title: 'สินค้าคงคลัง', url: '/inventory'},
     { title: 'ประวัติการขาย', url: '/history'},
     { title: 'member', url: '/member' },

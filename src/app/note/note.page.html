@@ -13,4 +13,56 @@
       <ion-title size="large">Note</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div class="container">
+
+    <div class="sidebar">
+      <h3 class="centered-heading">หมวดหมู่</h3>
+      <button class="category-button">Category 1</button>
+      <button class="category-button">Category 2</button>
+      <button class="category-button">Category 3</button>
+    </div>
+    
+
+
+  <div class="main-content">
+    <h2>รายการสินค้า</h2>
+    <ul class="product-list">
+      <li class="product-item">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="3" size-md="3" size-lg="3" *ngFor=" let item of [1,2,3,4,5,6,7,8,9,10,11,12]">
+        <ion-card class="card-product"  >
+            <img class="img-final" src="https://beers-withme.com/wp-content/uploads/2023/09/1.jpg" alt="">
+
+        </ion-card>
+        </ion-col>
+          </ion-row>
+      </ion-grid>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="selected-product">
+    <h3>สินค้า</h3>
+    <div class="product-details">
+      <ion-grid>
+        <ion-row *ngFor=" let item of [1,2,3,4]">
+      <span class="detail-label">201123</span>
+      <span id="selected-product-name" class="selected-product-name">Bear Chang</span>
+      <span id="selected-product-2" class="selected-product-2">5000</span>
+</ion-row>
+      </ion-grid>
+    </div>
+    
+    
+    <div class="product-details2">
+      <span class="detail-label">รวม:</span>
+      <span id="selected-product-price" class="selected-product-price">$5000  </span>
+    </div>
+<button class="add-to-cart-btn2">ยกเลิก</button>
+    <button class="add-to-cart-btn">ยืนยัน</button>
+    
+  </div>
+</div>
 </ion-content>
