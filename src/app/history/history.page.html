@@ -14,23 +14,73 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card class="flex shadow-inner p-6 theme-bg">
-   
-      <ion-card class="flex justify-between width2-3  mr-4 ml-4">
-        <ion-card-content>
-        <ion-button>sssssss</ion-button>
-        <ion-button>sssssss</ion-button>
+  <ion-card-content class="flex h-full ">
+
+    <ion-card class=" justify-between width2-3 ">
+
+      <ion-card-content class="flex justify-between p-0 m-0">
+        <ion-card-content class="pb-0">
+          
+          <ion-segment class="flex " value="custom">
+            <ion-segment-button class="custom-button " value="a" (click)="bill()">
+              <ion-label>รายบิล</ion-label>
+            </ion-segment-button>
+            
+            <ion-segment-button class="custom-button" value="b" (click)="day()">
+              <ion-label>รายวัน</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+
+        </ion-card-content>
+        <ion-card-content class="pb-0 ">
+          <ion-button class="bg-button">Export</ion-button>
+        </ion-card-content>
       </ion-card-content>
-      <ion-card-content>
-          <ion-button>sssssssssss</ion-button>
-      </ion-card-content>
+    
+      <table  class=" w-full flex-row justify-between text-center ">
+        <thead class="bg-sky h-10">
+          <tr>
+            <th class=" "> ID </th>
+            <th class=" ">วันที่</th>
+            <th class=" ">เวลา</th>
+            <th class=" ">ประเภทชำระ</th>
+            <th class=" "> จำนวนเงิน</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody class="" *ngFor="let item of history">
+          <tr class="h-10">
+            <td>{{item.order_id_main}}</td>
+            <td>{{item.date_time | date:'dd/MM/yyyy'}}</td>
+            <td>{{item.date_time | date:'HH:mm:ss'}}</td>
+            <td>เงินสด</td>
+            <td>{{item.total_price}}</td>
+            <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg></td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <ion-card-content class="flex justify-between bg-sky absolute inset-x-0 bottom-0 ">
+        <p class="">รวมบิน</p>
+        <div class="flex justify-center">
+        <p>ทั้งหมด</p>
+        <h2>12000</h2>
+        <p>บาท</p>
+        </div>
+    </ion-card-content>
     </ion-card>
+      
+    <ion-card class=" width1-3 tb  text-center ">
+     ddddddddddddddddddddddddd
+    </ion-card>
+
+  </ion-card-content>
+  
+  
+  
  
-
-    <ion-card class=" width1-3 mr-4 ml-4 tb ">
-      <ion-card-content>
-
-      </ion-card-content>
-    </ion-card>
-  </ion-card>
 </ion-content>

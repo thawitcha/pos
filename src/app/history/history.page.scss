@@ -19,3 +19,19 @@
       .width2-3 {
         width: 66.666667%;
       } 
+      .bg-button{
+        --border-radius: 10px;
+        --background: var(--ion-color-success)
+        
+      }
+      .custom-button{
+        --border-radius :10px;
+        --background:var(--ion-background-color-botton)
+        
+      }
+      .table-fixed {
+        table-layout: fixed;
+      }
+      .bg-sky{
+        background-color: #E3F3FF;
+      }
