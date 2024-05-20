@@ -145,31 +145,50 @@ ion-col {
   /* กำหนดให้ขนาดปุ่มเท่ากับคอลัม */
 }
 
-.theme-bg {
+ion-button {
   --background: var(--ion-background-color-bg)
 }
 
-.text-bold{
+.text-bold {
   font-weight: 700;
 }
-.bg-button{
+
+.bg-button {
   --background: var(--ion-color-success)
 }
-.border-radius{
+
+.border-radius {
   border-radius: 10px;
 }
-.bg-change{
+
+.bg-change {
   background: #F5F8FF;
 }
-.bg-botton-number{
+
+.bg-botton-number {
   --background: var(--ion-background-color-botton-number)
 }
-.bg-botton-cancle{
-  --background: var(--ion-background-color-botton-cancle)
-} 
-.border-radius2{
+
+.bg-botton-cancel {
+  --background: var(--ion-background-color-botton-cancel)
+}
+
+.border-radius2 {
   --border-radius: 20px;
 }
-.bg-top-table{
+
+.bg-top-table {
   background: var(--ion-background-color-top-table);
+}
+
+.button_active {
+  --background: var(--ion-background-color-botton) !important;
+}
+
+.danger {
+  --background: var(--ion-color-danger) !important;
+}
+
+.tertiary {
+  --background: var(--ion-color-tertiary) !important;
 }

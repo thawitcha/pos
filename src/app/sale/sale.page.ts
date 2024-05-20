@@ -12,6 +12,9 @@ export class SalePage implements OnInit {
   foods: any = [];
   Daily_sales: any
   totalPrice: number = 0
+  type: number = 1
+  foods_search: any = [];
+
 
   constructor(
     private backEnd: HttpClient
@@ -20,7 +23,7 @@ export class SalePage implements OnInit {
   ngOnInit(): void {
     this.loadFood()
     this.cal()
-    //////
+
   }
   loadFood() {
 
@@ -38,5 +41,21 @@ export class SalePage implements OnInit {
       console.log(this.totalPrice); // แสดงค่าราคารวมในคอนโซล
     })
   }
-  //////////
+  timeout:any
+  handleInput(event: any) {
+    const query = event.target.value.toLowerCase();
+    const formData = new FormData();
+    if (this.timeout) {
+        clearTimeout(this.timeout);
+    }
+    this.timeout = setTimeout(() => {
+        formData.append('search', query);
+
+        this.backEnd.post('http://192.168.1.169/POSproject/index.php/foodGroup/getMenuSearch', formData).subscribe((data: any) => {
+            this.foods_search = data;
+            console.log(this.foods_search);
+        });
+    }, 2000);
+}
+
 }
