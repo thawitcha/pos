@@ -1,21 +1,33 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar class="theme-top-bar ">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>inventory</ion-title>
+    <ion-title>สินค้าคงคลัง</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="theme-bg">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">inventory</ion-title>
     </ion-toolbar>
   </ion-header>
-    <div>
-      <table class="table-fixed wide text">
-        <thead class="text_color_black">
+
+  <ion-card-content>
+    <div class="flex justify-end m-2">
+      <ion-input class="flex items-center input-header w-60 mr-2 " placeholder="ค้นหา">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="w-6 h-6 ml-2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+        </svg>
+      </ion-input>
+    <ion-button>เพิ่มสินค้า</ion-button>
+    </div>
+    <div class="flex">
+      <table class="table-fixed wide text ">
+        <thead class="text_color_black bg-sky-200 h-12 br-header-left br-header-right">
           <tr>
             <th class="font-medium">รูปภาพ</th>
             <th class="font-medium">ชื่อสินค้า</th>
@@ -25,7 +37,7 @@
             <th class="font-medium">คงเหลือ</th>
           </tr>
         </thead>
-        <tbody class="table-fixed wide text" *ngFor="let item of foods">
+        <tbody class="table-fixed wide text bg-white" *ngFor="let item of foods">
           <tr class="pl-2_5 text_color_black">
             <td class="text-center"> <img src="{{item.pic_url}}" alt="test"></td>
             <td class="text-center">{{item.name}}</td>
@@ -38,4 +50,5 @@
         </tbody>
       </table>
     </div>
+    </ion-card-content>
 </ion-content>

@@ -22,7 +22,10 @@
     justify-items: center;
   }
   
-  .theme-header {}
+  .input-header{
+    background-color: #ffffff;
+    border-radius: 10px;
+  }
   
   //////////////////
   .theme-bg {
@@ -143,6 +146,22 @@
   .bw {
     justify-content: space-between;
   }
+
+  .br-header-left th:first-child{
+    border-top-left-radius: 10px;
+    
+  }
+  .br-header-right th:last-child {
+    border-top-right-radius: 10px;
+  }
+//   .text_color_black.bg-sky-200.h-12 th:first-child {
+//     border-top-left-radius: 10px;
+// }
+
+// .text_color_black.bg-sky-200.h-12 th:last-child {
+//     border-top-right-radius: 10px;
+// }
+
   
   .font_style {
     .text-xl3 {
