@@ -147,6 +147,7 @@ ion-col {
 
 ion-button {
   --background: var(--ion-background-color-bg)
+
 }
 
 .text-bold {
@@ -191,4 +192,13 @@ ion-button {
 
 .tertiary {
   --background: var(--ion-color-tertiary) !important;
+}
+.button-pordee{
+  --background:var(--ion-background-color-button-prodee);
+}
+.custom-input{
+  --padding-bottom: 10px;
+  --padding-end: 10px;
+  --padding-start: 10px;
+  --padding-top: 10px;
 }

@@ -10,16 +10,12 @@
           </ion-buttons>
           <ion-title class="theme_txt">หน้าขาย</ion-title>
           <div>
-            <ion-searchbar placeholder="Custom Placeholder" (ionInput)= "handleInput($event)"></ion-searchbar>
-            <ion-list>
-              <!-- <ion-item *ngFor="let ID of foods">
-                <ion-label>{{ ID }}</ion-label>
-              </ion-item> -->
-            </ion-list>
+            <ion-searchbar #input placeholder="Custom Placeholder" (ionInput)="handleInput($event)"></ion-searchbar>
+
           </div>
         </ion-toolbar>
-      
-        
+
+
       </ion-header>
       <ion-card-header class="w-full ">
         <div class="w-full flex">
@@ -52,16 +48,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of foods; let i = index">
-              <td class="text-center">{{i+1}}</td>
-              <td>{{item.cg_name}}</td>
-              <td class="text-center">{{item.price}}</td>
-              <td class="text-center"><ion-input></ion-input></td>
-              <td class="text-center">{{item.total}}</td>
-              <td class="flex justify-end"><ion-button class="border-radius2 theme-bg text-black">ลบ</ion-button></td>
-
-            </tr>
-
+       
+          <ng-container *ngIf="foods_search">
+           
+          </ng-container>
+          <tr *ngFor="let item of in_cart; let i = index">
+            <td class="text-center">{{i+1}}</td>
+            <td>{{item.cg_name}}</td>
+            <td class="text-center">{{item.price}}</td>
+            <td class="text-center"><ion-input></ion-input></td>
+            <td class="text-center">{{item.total}}</td>
+            <td class="flex justify-end"><ion-button class="border-radius2 theme-bg text-black">ลบ</ion-button></td>
+          </tr>
           </tbody>
         </table>
       </div>
@@ -101,18 +99,28 @@
           <ion-row class="p-0 m-0">
             <ion-col size-xl="4" size-lg="4" size-md="6" size-sm="12" size-xs="12" class="m-0">
               <ion-button [class.button_active]="type === 1" (click)="type =1"
-                class="w-full max-w-[178px]  custom-button ">
-                เงินสด </ion-button>
+                class="w-full max-w-[178px]  custom-button">
+                <p><ion-text color="black">
+                    <h1 class="text-black">เงินสด</h1>
+                  </ion-text></p>
+              </ion-button>
             </ion-col>
             <ion-col size-xl="4" size-lg="4" size-md="6" size-sm="12" size-xs="12" class="m-0">
               <ion-button [class.button_active]="type === 2" (click)="type=2"
                 class="w-full max-w-[178px]  custom-button ">
-                เงินโอน </ion-button>
+                <p><ion-text color="black">
+                    <h1 class="text-black">เงินโอน</h1>
+                  </ion-text></p>
+                
+              </ion-button>
             </ion-col>
             <ion-col size-xl="4" size-lg="4" size-md="6" size-sm="12" size-xs="12" class="m-0">
               <ion-button [class.button_active]="type === 3" (click)="type=3"
                 class="w-full max-w-[178px]  custom-button ">
-                ตัดบัตร </ion-button>
+                <p><ion-text color="black">
+                  <h1 class="text-black">ตัดบัตร</h1>
+                </ion-text></p>
+                 </ion-button>
             </ion-col>
 
           </ion-row>
@@ -123,34 +131,35 @@
               <ion-input label="เงินสด" type="number" labelPlacement="stacked" placeholder="700" class="flex justify-end"></ion-input>
             </ion-item> -->
           <ion-item class="w-full flex flex-wrap">
-            <ion-input label="เงินสด" placeholder="0" class="text-right w-full border-2 border-blue-400 border-radius"
+            <ion-input label="เงินสด" placeholder="0" class="custom-input text-right w-full border-2 border-blue-400 border-radius"
               type="number"></ion-input>
           </ion-item>
           <ion-item class="w-full flex flex-wrap" *ngIf="type === 2">
-            <ion-input label="เงินโอน" placeholder="0" class="text-right w-full border-2 border-blue-400 border-radius"
+            <ion-input label="เงินโอน" placeholder="0" class="custom-input text-right w-full border-2 border-blue-400 border-radius"
               type="number"></ion-input>
           </ion-item>
         </div>
 
-        <div class="flex w-full bg-change border-radius px-3 pr-8">
-          <span class="w-[50%] mx-0.5 my-1 items-center flex">เงินทอน</span>
-          <span class="justify-end items-center w-[50%] flex">55.00</span>
+        <div class="flex bg-change border-radius mx-4 py-3">
+          <span class="w-[50%]  items-center flex ml-3">เงินทอน</span>
+          <span class="justify-end items-center w-[50%] flex mr-7">55.00</span>
         </div>
 
       </div>
 
-      <ion-grid fixed class="p-0">
-        <ion-row class="p-0">
-          <ion-col *ngFor="let item of ['1000','500','100','50','20','10','5','1']" size-xl="3"
-            size-lg="3" size-md="4" size-sm="6" size-xs="12">
-            <ion-button class="w-full max-w-[125px] h-[70px]">{{item}}</ion-button>
+      <ion-grid fixed class="">
+        <ion-row class="">
+          <ion-col *ngFor="let item of ['1000','500','100','50','20','10','5','1']" size-xl="3" size-lg="3" size-md="4"
+            size-sm="6" size-xs="12">
+            <ion-button class="w-full max-w-[150px] h-[70px] text-black m-0">{{item}}</ion-button>
           </ion-col>
 
           <ion-col size-xl="6">
-            <ion-button class="w-full max-w-[270px] h-[70px] flex flex-row">ล้าง</ion-button>
+            <ion-button class="m-0 w-full max-w-[305px] h-[70px] flex flex-row bg-botton-cancel"><ion-icon
+                name="close-circle-outline"></ion-icon>ล้าง</ion-button>
           </ion-col>
           <ion-col size-xl="6">
-            <ion-button class="w-full max-w-[270px] h-[70px] flex flex-row">พอดี</ion-button>
+            <ion-button class="m-0 w-full max-w-[305px] h-[70px] flex flex-row button-pordee">พอดี</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
