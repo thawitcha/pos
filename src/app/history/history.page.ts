@@ -25,7 +25,7 @@ export class HistoryPage implements OnInit {
   //   })
   // }
 bill(){
-  this.getBackend = this.backEnd.get('http://192.168.1.169/POSproject/index.php/Bill/getBillHistory').subscribe((data: any) => {
+  this.getBackend = this.backEnd.get('http://192.168.1.104/POSproject/index.php/Bill/getBillHistory').subscribe((data: any) => {
     this.history = data;
 
     console.log(this.history);
@@ -34,7 +34,7 @@ bill(){
 }
 day(){
 
-  this.getBackend = this.backEnd.get('http://192.168.1.169/POSproject/index.php/Bill/getBillHistory').subscribe((data: any) => {
+  this.getBackend = this.backEnd.get('http://192.168.1.104/POSproject/index.php/Bill/getBillHistory').subscribe((data: any) => {
     this.history = data;
 
 
