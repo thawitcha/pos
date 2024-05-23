@@ -10,8 +10,6 @@
           </ion-buttons>
           <ion-title class="theme_txt">หน้าขาย</ion-title>
           <div>
-            <ion-searchbar #input placeholder="Custom Placeholder" (ionInput)="handleInput($event)"></ion-searchbar>
-
           </div>
         </ion-toolbar>
 
@@ -31,7 +29,7 @@
 
           </div>
           <div class="w-1/2 flex justify-end ">
-            <ion-button class="bg-button border-radius2">+ เพิ่มสินค้า</ion-button>
+            <ion-button class="bg-button border-radius2" routerLink="/product">+ เพิ่มสินค้า </ion-button>
           </div>
         </div>
       </ion-card-header>
@@ -48,22 +46,24 @@
             </tr>
           </thead>
           <tbody>
-       
-          <ng-container *ngIf="foods_search">
-           
-          </ng-container>
-          <tr *ngFor="let item of in_cart; let i = index">
-            <td class="text-center">{{i+1}}</td>
-            <td>{{item.cg_name}}</td>
-            <td class="text-center">{{item.price}}</td>
-            <td class="text-center"><ion-input></ion-input></td>
-            <td class="text-center">{{item.total}}</td>
-            <td class="flex justify-end"><ion-button class="border-radius2 theme-bg text-black">ลบ</ion-button></td>
-          </tr>
+
+            <ng-container *ngIf="foods_search">
+
+            </ng-container>
+            <tr *ngFor="let item of in_cart; let i = index">
+              <td class="text-center">{{i+1}}</td>
+              <td>{{item.name}}</td>
+              <td class="text-center">{{item.price}}</td>
+              <td class="text-center"><ion-input [(ngModel)]="item.count"></ion-input></td>
+              <td class="text-center">{{sumprice(item.count,item.price)}}</td>
+              <td class="flex justify-end"><ion-button class="border-radius2 theme-bg text-black"
+                  (click)="delete(i)">ลบ</ion-button></td>
+            </tr>
           </tbody>
         </table>
       </div>
     </ion-card>
+
 
     <div class="flex flex-col w-1/3">
       <div class="display_flex flex-row font_style text">
@@ -82,15 +82,15 @@
             <ion-card-header class="flex flex-col w-full ">
               <div class="flex-row justify-between flex">
                 <span class="text-left">รวมทั้งสิ้น</span>
-                <span class="text-right">700</span>
+                <span class="text-right">{{sum_price()}}</span>
               </div>
               <div class="flex-row justify-between flex">
                 <span class="text-left">ส่วนลด</span>
-                <span class="text-right">-55</span>
+                <span class="text-right">{{discount}}</span>
               </div>
               <div class="flex flex-row justify-between">
                 <span class="text-left ">ราคาสุทธิ</span>
-                <span class="text-right">645</span>
+                <span class="text-right">{{final_price()}}</span>
               </div>
             </ion-card-header>
           </ion-card>
@@ -111,16 +111,16 @@
                 <p><ion-text color="black">
                     <h1 class="text-black">เงินโอน</h1>
                   </ion-text></p>
-                
+
               </ion-button>
             </ion-col>
             <ion-col size-xl="4" size-lg="4" size-md="6" size-sm="12" size-xs="12" class="m-0">
               <ion-button [class.button_active]="type === 3" (click)="type=3"
                 class="w-full max-w-[178px]  custom-button ">
                 <p><ion-text color="black">
-                  <h1 class="text-black">ตัดบัตร</h1>
-                </ion-text></p>
-                 </ion-button>
+                    <h1 class="text-black">ตัดบัตร</h1>
+                  </ion-text></p>
+              </ion-button>
             </ion-col>
 
           </ion-row>
@@ -131,12 +131,12 @@
               <ion-input label="เงินสด" type="number" labelPlacement="stacked" placeholder="700" class="flex justify-end"></ion-input>
             </ion-item> -->
           <ion-item class="w-full flex flex-wrap">
-            <ion-input label="เงินสด" placeholder="0" class="custom-input text-right w-full border-2 border-blue-400 border-radius"
-              type="number"></ion-input>
+            <ion-input label="เงินสด" placeholder="0"
+              class="custom-input text-right w-full border-2 border-blue-400 border-radius" type="number"></ion-input>
           </ion-item>
           <ion-item class="w-full flex flex-wrap" *ngIf="type === 2">
-            <ion-input label="เงินโอน" placeholder="0" class="custom-input text-right w-full border-2 border-blue-400 border-radius"
-              type="number"></ion-input>
+            <ion-input label="เงินโอน" placeholder="0"
+              class="custom-input text-right w-full border-2 border-blue-400 border-radius" type="number"></ion-input>
           </ion-item>
         </div>
 
@@ -151,7 +151,7 @@
         <ion-row class="">
           <ion-col *ngFor="let item of ['1000','500','100','50','20','10','5','1']" size-xl="3" size-lg="3" size-md="4"
             size-sm="6" size-xs="12">
-            <ion-button class="w-full max-w-[150px] h-[70px] text-black m-0">{{item}}</ion-button>
+            <ion-button class="w-full max-w-[150px] h-[70px] text-black m-0" (click)="go(0)">{{item}}</ion-button>
           </ion-col>
 
           <ion-col size-xl="6">

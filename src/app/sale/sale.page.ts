@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IonInput } from '@ionic/angular';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-sale',
@@ -17,59 +18,135 @@ export class SalePage implements OnInit {
   foods_search: any = [];
   timeout: any
   in_cart: any = [];
+  item_list: any
+  cash: number = 0;
 
   @ViewChild('input') input!: IonInput;
+
   constructor(
-    private backEnd: HttpClient
+    private backEnd: HttpClient,
+    public appsevice: AppService
   ) { }
 
-  ngOnInit(): void {
-    this.loadFood()
-    this.cal()
 
+  ngOnInit(): void {
+    this.final_price()
   }
   ionViewDidEnter() {
     this.input.setFocus();
   }
-  loadFood() {
 
-    this.getBackend = this.backEnd.get('http://192.168.1.104/POSproject/index.php/foodGroup/getMenuAll').subscribe((data: any) => {
-      this.foods = data;
-      console.log(this.foods);
 
-    })
-  }
-  cal() {
-    this.Daily_sales = this.backEnd.get('http://192.168.1.104/POSproject/index.php/bill/getOrderBill').subscribe((data: any) => {
-      // คำนวณราคารวม
-      this.totalPrice = data.map((item: any) => parseInt(item.price) * parseInt(item.total)).reduce((acc: number, curr: number) => acc + curr, 0);
-
-      console.log(this.totalPrice); // แสดงค่าราคารวมในคอนโซล
-    })
-  }
-
-  handleInput(event: any) {
-    const query = event.target.value.toLowerCase();
+  handleInput(qrcode: any) {
+    // const query = event.target.value.toLowerCase();
     const formData = new FormData();
     if (this.timeout) {
       clearTimeout(this.timeout);
     }
     this.timeout = setTimeout(() => {
-      formData.append('search', query);
+      formData.append('search', qrcode);
 
-      this.backEnd.post('http://192.168.1.104/POSproject/index.php/foodGroup/getMenuSearch', formData).subscribe((data: any) => {
+      this.appsevice.postdata('foodGroup/getMenuSearch', formData).subscribe((data: any) => {
         this.foods_search = data;
         if (data && data.length > 0) {
-          this.in_cart.push(data[0])
-        }
+          let fill: any;
+          if (this.in_cart.length > 0) {
 
+
+            fill = this.in_cart.filter((res: any) => {
+              return res.barcode == data[0].barcode;
+            }).length;
+            console.log(fill);
+
+            let inter = 0
+            this.in_cart.forEach((res: any, index: number) => {
+              if (res.barcode == data[0].barcode) {
+                inter = index;
+              }
+
+            });
+            if (fill == 1) {
+              this.in_cart[inter].count++;
+            }
+            else {
+              data[0].count = 1
+              this.in_cart.push(data[0])
+            }
+            console.log(this.in_cart);
+           
+
+          }
+          else {
+            data[0].count = 1
+            // console.log(data[0]);
+            this.in_cart.push(data[0])
+          }
+        }
+ 
         console.log(this.foods_search);
         console.log("cart", this.in_cart);
 
 
       });
-    }, 500);
+    }, 200);
+  }
+  discount: any = 5
+
+  sum_price() {
+    let sum: number = 0
+    const initialValue = 0;
+    sum = this.in_cart.reduce(
+      (accumulator: any, currentValue: any) =>
+        accumulator + currentValue.count * currentValue.price
+      ,
+      initialValue,
+    );
+    return sum
+  }
+  final_price() {
+    let sum = 0
+    if (this.discount <= this.sum_price()) {
+      sum = this.sum_price() - this.discount
+      console.log(sum);
+
+    }
+    return sum
+  }
+  go(addprice: number) {
+    this.cash += addprice
+    console.log(addprice);
+    this.change()
+  }
+  change() {
+    throw new Error('Method not implemented.');
+  }
+  sumprice(count: number, price: number) {
+    return count * price;
+  }
+  delete(index: any) {
+    this.in_cart.splice(index, 1);
   }
 
-
+  barcode: string='';
+  values: string ='';
+  onKey(event: any) {
+    console.log(event);
+    
+    // this.barcode=event.target.value;
+}
+@HostListener('document:keypress',['$event'])
+handleKeyboardEvent(event:KeyboardEvent){
+  console.log(event);
+  console.log(this.barcode);
+  
+  if (event.key == 'Enter') {
+    // this.barcode = this.values
+    // console.log(this.barcode);
+    this.handleInput(this.values)
+    this.values = ""
+  }
+  else {
+this.values += event.key
+  }
+}
 }
