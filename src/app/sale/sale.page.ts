@@ -1,7 +1,8 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IonInput } from '@ionic/angular';
+import { IonInput, ModalController } from '@ionic/angular';
 import { AppService } from '../app.service';
+import { DiscountComponent } from './discount/discount.component';
 
 @Component({
   selector: 'app-sale',
@@ -21,11 +22,17 @@ export class SalePage implements OnInit {
   item_list: any
   cash: number = 0;
 
+  change_number: number = 0;
+  //เงินสด และ เงินโอน
+  real_cash: number = 0;
+  bank_cash: number = 0;
   @ViewChild('input') input!: IonInput;
 
   constructor(
     private backEnd: HttpClient,
-    public appsevice: AppService
+    public appsevice: AppService,
+    private modalCtrl: ModalController
+
   ) { }
 
 
@@ -33,7 +40,7 @@ export class SalePage implements OnInit {
     this.final_price()
   }
   ionViewDidEnter() {
-    this.input.setFocus();
+    this.input?.setFocus();
   }
 
 
@@ -73,7 +80,7 @@ export class SalePage implements OnInit {
               this.in_cart.push(data[0])
             }
             console.log(this.in_cart);
-           
+
 
           }
           else {
@@ -82,7 +89,7 @@ export class SalePage implements OnInit {
             this.in_cart.push(data[0])
           }
         }
- 
+
         console.log(this.foods_search);
         console.log("cart", this.in_cart);
 
@@ -91,6 +98,9 @@ export class SalePage implements OnInit {
     }, 200);
   }
   discount: any = 5
+  discount2(sum: number) {
+
+  }
 
   sum_price() {
     let sum: number = 0
@@ -112,14 +122,23 @@ export class SalePage implements OnInit {
     }
     return sum
   }
-  go(addprice: number) {
-    this.cash += addprice
-    console.log(addprice);
-    this.change()
+  go(addprice: any) {
+    console.log(this.cash);
+    switch (this.select_tap) {
+      case 1: {
+        this.real_cash += addprice
+        break;
+      }
+      case 2: {
+        this.bank_cash += addprice
+        break;
+      }
+      default: {
+        break;
+      }
+    }
   }
-  change() {
-    throw new Error('Method not implemented.');
-  }
+
   sumprice(count: number, price: number) {
     return count * price;
   }
@@ -127,26 +146,75 @@ export class SalePage implements OnInit {
     this.in_cart.splice(index, 1);
   }
 
-  barcode: string='';
-  values: string ='';
+  values: string = '';
   onKey(event: any) {
     console.log(event);
-    
+
     // this.barcode=event.target.value;
-}
-@HostListener('document:keypress',['$event'])
-handleKeyboardEvent(event:KeyboardEvent){
-  console.log(event);
-  console.log(this.barcode);
-  
-  if (event.key == 'Enter') {
-    // this.barcode = this.values
-    // console.log(this.barcode);
-    this.handleInput(this.values)
-    this.values = ""
   }
-  else {
-this.values += event.key
+  @HostListener('document:keypress', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    console.log(event);
+
+
+    if (event.key == 'Enter') {
+      this.handleInput(this.values)
+      this.values = ""
+    }
+    else {
+      this.values += event.key
+    }
   }
-}
+  clear() {
+    this.real_cash = 0
+    this.bank_cash = 0
+  }
+
+  select_tap: number = 0;
+
+  click_input(event: any) {
+    this.select_tap = event
+  }
+  change() {
+    let sum = 0;
+    sum = this.real_cash + this.bank_cash
+    if (sum > 0) {
+      sum = this.final_price() - sum
+    }
+    return sum
+  }
+  fit() {
+    switch (this.select_tap) {
+      case 1: {
+        this.real_cash = this.final_price()
+        this.bank_cash = 0
+        break;
+      }
+      case 2: {
+        this.bank_cash = this.final_price()
+        this.real_cash = 0
+        break;
+      }
+      default: {
+        //statements; 
+        break;
+      }
+    }
+  }
+
+  async openModal_discount() {
+    const modal = await this.modalCtrl.create({
+      cssClass: "css-custom-modal-discount",
+      component: DiscountComponent,
+    });
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+    console.log(data);
+
+    // if (role === 'confirm') {
+    //   this.message = `Hello, ${data}!`;
+    // }
+  }
+
 }
