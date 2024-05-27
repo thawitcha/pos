@@ -8,6 +8,9 @@ import { SalePageRoutingModule } from './sale-routing.module';
 
 import { SalePage } from './sale.page';
 import { NgxScannerQrcodeModule, LOAD_WASM } from 'ngx-scanner-qrcode';
+import { DiscountComponent } from './discount/discount.component';
+import { AddDiscountComponent } from './discount/add-discount/add-discount.component';
+import { DiscountModule } from './discount/discount.module';
 LOAD_WASM().subscribe();
 @NgModule({
   imports: [
@@ -16,8 +19,9 @@ LOAD_WASM().subscribe();
     IonicModule,
     ReactiveFormsModule,
     SalePageRoutingModule,
-    NgxScannerQrcodeModule
+    NgxScannerQrcodeModule,
+    DiscountModule
   ],
-  declarations: [SalePage]
+  declarations: [SalePage,DiscountComponent,AddDiscountComponent]
 })
 export class SalePageModule { }

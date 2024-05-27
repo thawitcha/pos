@@ -1,0 +1,38 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="w-full flex flex-wrap">
+  <p class="text-center text-[30px] w-full my-[20px]">เพิ่มโปรโมชัน</p>
+  <div class="w-full">
+    <div class="w-[100%] flex mb-[15px]">
+      <span class="w-[30%] flex justify-end pt-[8px] pr-[20px]">ชื่อ</span>
+      <ion-input type="text" placeholder="กรอกชื่อ" class="flex justify-center w-[49%] bg" formControlName = "name"></ion-input></div>
+    <div class="w-[100%] flex mb-[10px]">
+      <span class="w-[30%] flex justify-end pt-[8px] pr-[20px]">จำนวน</span>
+      <ion-input type="number" placeholder="กรอกจำนวน" class="flex justify-center w-[49%] bg" formControlName = "count"></ion-input>
+    </div>
+    <div class="w-[100%] flex">
+      <span class="w-[30%] flex justify-end pt-[20px] pr-[20px]">หน่วย</span>
+      <ion-list class="w-[70%] ">
+        <ion-item class="flex justify-center w-[70%] bg">
+          <ion-select aria-label="Fruit" interface="popover" placeholder="เลิอก" formControlName = "point">
+            <ion-select-option value="บาท">บาท</ion-select-option>
+            <ion-select-option value="เปอร์เซ็น">เปอร์เซ็น</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="w-[100%] flex">
+      <span class="w-[30%] flex justify-end pt-[20px] pr-[20px]">ประเภท</span>
+      <ion-list class="w-[70%] ">
+        <ion-item class="flex justify-center w-[70%] bg">
+          <ion-select aria-label="Fruit" interface="popover" placeholder="เลือก" formControlName = "type">
+            <ion-select-option value="เพิ่ม">เพิ่ม</ion-select-option>
+            <ion-select-option value="ลด">ลด</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+  <div class="absolute inset-x-[35px] bottom-[35px] h-16 flex justify-between">
+    <ion-button expand="block" (click)="modal.dismiss()" shape="round">ยกเลิก</ion-button>
+    <ion-button type="submit" (click)="modal.dismiss(this.profileForm.value)" expand="block" shape="round">ยืนยัน</ion-button>
+  </div>
+</form>
