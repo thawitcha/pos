@@ -1,0 +1,41 @@
+
+
+<table  class=" w-full flex-row justify-between text-center ">
+  <thead class="bg-sky h-10">
+    <tr>
+      <th class=" "> ID </th>
+      <th class=" ">วันที่</th>
+      <th class=" ">เวลา</th>
+      <th class=" ">ประเภทชำระ</th>
+      <th class=" "> จำนวนเงิน</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody class="" *ngFor="let item of history">
+    <tr class="h-10">
+      <td>{{item.order_id_main}}</td>
+      <td>{{item.date_time | date:'dd/MM/yyyy'}}</td>
+      <td>{{item.date_time | date:'HH:mm:ss'}}</td>
+      <td>เงินสด</td>
+      <td>{{item.total_price}}</td>
+      <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg></td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<ion-card-content class="flex justify-between bg-sky absolute inset-x-0 bottom-0 ">
+  <ion-text class="" color="dark" ><h2>รวมบิล</h2></ion-text>
+  <div class="flex justify-center">
+  <p>ทั้งหมด</p>
+  <h2>{{sum_total_price}}</h2>
+  <p>บาท</p>
+  </div>
+</ion-card-content>
+
+<!-- <ion-card class=" width1-3 tb  text-center ">
+  ddddddddddddddddddddddddd
+ </ion-card> -->
