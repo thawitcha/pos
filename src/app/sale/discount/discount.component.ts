@@ -16,7 +16,7 @@ export class DiscountComponent implements OnInit {
     }
   ];
 
-  constructor(private modalCtrl: ModalController) {
+  constructor(public modalCtrl: ModalController) {
   }
 
   ngOnInit() {

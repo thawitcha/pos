@@ -101,7 +101,7 @@ ion-col {
 }
 
 .theme-botton {
-  --background: var(--ion-background-color-botton)
+  --background: var(--ion-background-color-theme-brown)
 }
 
 .theme-botton2 {
@@ -113,7 +113,7 @@ ion-col {
 }
 
 .theme-top-bar {
-  --background: var(--ion-background-color-top);
+  --background: var(--ion-background-color-theme-brown);
 
   @media (prefers-color-scheme: dark) {
     --background: var(--ion-background-color-top-dark);
@@ -125,7 +125,7 @@ ion-col {
 }
 
 .custom-button {
-  --border-radius: 10px;
+  border-radius: 10px;
 }
 
 .full-width-button {
@@ -146,8 +146,8 @@ ion-col {
 }
 
 ion-button {
-  --background: var(--ion-background-color-bg)
-
+  --background: var(--ion-background-color-bg);
+  --color: white;
 }
 
 .text-bold {
@@ -159,7 +159,7 @@ ion-button {
 }
 
 .border-radius {
-  border-radius: 10px;
+  --border-radius: 10px;
 }
 
 .bg-change {
@@ -193,10 +193,12 @@ ion-button {
 .tertiary {
   --background: var(--ion-color-tertiary) !important;
 }
-.button-pordee{
-  --background:var(--ion-background-color-button-prodee);
+
+.button-pordee {
+  --background: var(--ion-background-color-button-prodee);
 }
-.custom-input{
+
+.custom-input {
   --padding-bottom: 10px;
   --padding-end: 10px;
   --padding-start: 10px;
