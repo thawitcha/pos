@@ -69,14 +69,14 @@
             <ion-col>แก้ไข</ion-col>
           </ion-row>
 
-          <ion-row class="text-center my-2">
-            <ion-col>1</ion-col>
-            <ion-col>12345</ion-col>
-            <ion-col>หล่อมาก</ion-col>
-            <ion-col>098xxxxxxx</ion-col>
-            <ion-col>29-11-24</ion-col>
-            <ion-col>1xxxxxxx</ion-col>
-            <ion-col>VVVVVVVIP</ion-col>
+          <ion-row class="text-center my-2" *ngFor="let item of member; let i = index">
+            <ion-col>{{ i+1}}</ion-col>
+            <ion-col>{{item.member_id}}</ion-col>
+            <ion-col>{{item.member_name}}</ion-col>
+            <ion-col>{{item.member_phone}}</ion-col>
+            <ion-col>{{item.member_date  | date:'dd/MM/yyyy'}}</ion-col>
+            <ion-col>{{item.member_points}}</ion-col>
+            <ion-col>{{item.member_type}}</ion-col>
             <ion-col class="">
               <ion-button class="bg-botton-warning" >แก้ไข</ion-button>
               <ion-button class="bg-botton-warning2">ลบ</ion-button>

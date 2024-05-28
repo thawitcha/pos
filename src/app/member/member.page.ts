@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MemberPage implements OnInit {
   getBackend: any
-  member: any = [];
+  member: any [] = [];
   constructor( private backEnd: HttpClient ) { }
 
   ngOnInit():void {
@@ -17,7 +17,9 @@ export class MemberPage implements OnInit {
 
     this.getBackend = this.backEnd.get('http://192.168.1.104/POSproject/index.php/Member/getMembersBySearch').subscribe((data: any) => {
       this.member = data;
+
       console.log(this.member);
+
 
     })
   }
