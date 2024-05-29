@@ -99,7 +99,7 @@ export class SalePage implements OnInit {
   }
   discount: any = 5
   discount2(sum: number) {
-
+       
   }
 
   sum_price() {

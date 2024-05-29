@@ -126,54 +126,28 @@
 
     <ion-card class=" width1-3 mr-4 ml-8 tb ">
       <p class=" text-center m-5 ">เพิ่มสมาชิก</p>
-      <div class="flex justify-between items-center m-8 ">
-        <div>ID </div>
-        <ion-input class="items-center w-52 custom-button-h2 " label="" placeholder="กรอก ID"></ion-input>
-      </div>
-      <div class="flex justify-between items-center m-8">
+      <div class="flex flex-col justify-between items-center m-8 ">
+       
         <div>ชื่อ </div>
-        <ion-input class="items-center w-52 custom-button-h2 " label="" placeholder="กรอกชื่อ"></ion-input>
-      </div>
-      <div class="flex justify-between items-center m-8">
-        <div>วันเกิด </div>
-        <ion-input class="items-center w-52 custom-button-h2 " label="" placeholder="กรอกวันเกิด"></ion-input>
-      </div>
-      <div class="flex justify-between items-center m-8">
-        <div>เบอร์โทร </div>
-        <ion-input class="items-center w-52 custom-button-h2 " label="" placeholder="กรอกเบอร์โทร"></ion-input>
-      </div>
-      <div class="flex justify-between items-center m-8">
-        <div>ประเภท </div>
-        <ion-button id="popover-button2" color="" class=" custom-button-h2 w-52">เลือกประเภท
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-20 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          </svg>
-        </ion-button>
-        <ion-popover trigger="popover-button2" [dismissOnSelect]="true">
-          <ng-template>
-            <ion-content>
-              <ion-list>
-                <ion-item [button]="true" [detail]="false">Option 1</ion-item>
-                <ion-item [button]="true" [detail]="false">Option 2</ion-item>
-                <ion-item [button]="true" id="nested-trigger">More options...</ion-item>
+        <ion-input [(ngModel)]="member_input.member_name" class="items-center w-52 custom-button-h2 " label="" placeholder="กรอกชื่อ"></ion-input>
+     
 
-                <ion-popover trigger="nested-trigger" [dismissOnSelect]="true" side="start">
-                  <ng-template>
-                    <ion-content>
-                      <ion-list>
-                        <ion-item [button]="true" [detail]="false">Nested option</ion-item>
-                      </ion-list>
-                    </ion-content>
-                  </ng-template>
-                </ion-popover>
-              </ion-list>
-            </ion-content>
-          </ng-template>
-        </ion-popover>
-      </div>
+        <div>วันเกิด </div>
+        <ion-input  [(ngModel)]="member_input.member_date" class="items-center w-52 custom-button-h2 " label="" placeholder="กรอกวันเกิด"></ion-input>
+     
+     
+        <div>เบอร์โทร </div>
+        <ion-input [(ngModel)]="member_input.member_phone" class="items-center w-52 custom-button-h2 " label="" placeholder="กรอกเบอร์โทร"></ion-input>
+        <div>ประเภท </div>
+      <ion-select [(ngModel)]="member_input.member_type" interface="popover" class="w-52 custom-button-h2" style="text-align: center;" placeholder="เลือกประเภท">
+        <ion-select-option value="1">Option 1</ion-select-option>
+        <ion-select-option value="2">Option 2</ion-select-option>
+        <ion-select-option value="nested">More options...</ion-select-option>
+      </ion-select>
+    </div>
+    
       <div class="flex justify-between mb-32 mt-32">
-        <ion-button class="ml-8 mr-8 w-28 bg-button" >บันทึก</ion-button>
+        <ion-button class="ml-8 mr-8 w-28 bg-button"(click)="saveMember()" >บันทึก</ion-button>
         <ion-button class="ml-8 mr-8 w-28  bg-botton-cancel"  >ยกเลิก</ion-button>
       </div>
     </ion-card>
