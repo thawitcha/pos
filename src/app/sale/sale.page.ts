@@ -24,8 +24,9 @@ export class SalePage implements OnInit {
 
   change_number: number = 0;
   //เงินสด และ เงินโอน
-  real_cash: number = 0;
-  bank_cash: number = 0;
+  
+  real_cash: any='';
+  bank_cash: any ='';
   @ViewChild('input') input!: IonInput;
 
   constructor(
@@ -124,6 +125,12 @@ export class SalePage implements OnInit {
   }
   go(addprice: any) {
     console.log(this.cash);
+    if (this.real_cash == '') {
+      this.real_cash = 0 
+    }
+    if (this.bank_cash == '') {
+      this.bank_cash = 0 
+    }
     switch (this.select_tap) {
       case 1: {
         this.real_cash += addprice
@@ -167,21 +174,24 @@ export class SalePage implements OnInit {
   }
   clear() {
 
-    this.real_cash = 0
-    this.bank_cash = 0
+    this.real_cash = ""
+    this.bank_cash = ""
   }
 
   select_tap: number = 0;
 
   click_input(event: any) {
     this.select_tap = event
+
   }
   change() {
     let sum = 0;
-    sum = this.real_cash + this.bank_cash
+    
+    sum = (this.real_cash ? this.real_cash: 0 ) + (this.bank_cash ? this.bank_cash: 0)
     if (sum > 0) {
-      sum = this.final_price() - sum
+      sum =  sum - this.final_price() 
     }
+    
     return sum
   }
   fit() {
