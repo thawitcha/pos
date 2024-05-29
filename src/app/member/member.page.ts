@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppService } from '../app.service';
 @Component({
   selector: 'app-member',
   templateUrl: './member.page.html',
@@ -8,10 +9,35 @@ import { HttpClient } from '@angular/common/http';
 export class MemberPage implements OnInit {
   getBackend: any
   member: any [] = [];
-  constructor( private backEnd: HttpClient ) { }
+  member_input = {
+   
+    member_name: '',
+    member_date: '',
+    member_phone: '',
+    member_type: ''
+  };
+  constructor( 
+    private backEnd: HttpClient ,
+    private appservice : AppService
+  ) { }
 
   ngOnInit():void {
     this.loadMember()
+  }
+  
+
+  saveMember() {
+    console.log('Member saved:', this.member_input);
+    this.appservice.postdata('Member/insertMember', this.member_input).subscribe((data: any) => {
+      console.log(data);
+      
+    })
+
+  }
+
+  cancel() {
+    console.log('Action canceled');
+    
   }
   loadMember() {
 
