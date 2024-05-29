@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-product',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product.page.scss'],
 })
 export class ProductPage implements OnInit {
+  getBackend: any
+  foods: any [] = [];
+  constructor( private backEnd: HttpClient) { }
 
-  constructor() { }
+  ngOnInit(): void {
+    this.loadFood()
+  }
+  loadFood() {
 
-  ngOnInit() {
+    this.getBackend = this.backEnd.get('http://192.168.1.104/POSproject/index.php/foodGroup/getMenuAll').subscribe((data: any) => {
+      this.foods = data;
+      console.log(this.foods);
+
+    })
   }
 
 }
