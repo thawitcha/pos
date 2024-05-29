@@ -5,7 +5,7 @@
     <ion-card class="w-2/3 border-r border-black">
       <ion-header [translucent]="true">
         <ion-toolbar class="theme-top-bar">
-          <ion-buttons slot="start">
+          <ion-buttons slot="start" style="color: white;">
             <ion-menu-button></ion-menu-button>
           </ion-buttons>
           <div class="flex">
@@ -66,8 +66,8 @@
               <td class="text-center">{{item.price}}</td>
               <td class="text-center"><ion-input [(ngModel)]="item.count"></ion-input></td>
               <td class="text-center">{{sumprice(item.count,item.price)}}</td>
-              <td class="flex justify-end"><ion-button class="border-radius2 theme-bg text-black"
-                  (click)="delete(i)">ลบ</ion-button></td>
+              <td class="flex justify-center"><ion-button class="border-radius2 bg-del text-black"
+                  (click)="delete(i)" fill="clear"><ion-icon name="trash-outline"  style="opacity: calc(50%); color: gray;"></ion-icon></ion-button></td>
             </tr>
           </tbody>
         </table>
@@ -79,7 +79,7 @@
       <div class="display_flex flex-row font_style text">
 
         <div class="flex overflow-auto">
-          <ion-button class="w-full max-w-[140px] border-radius2 theme-botton">พักบิล </ion-button>
+          <ion-button class="w-full max-w-[140px] border-radius2 theme-botton"><ion-icon name="swap-horizontal-outline"></ion-icon> พักบิล</ion-button>
 
           <ion-button class="w-full max-w-[140px] border-radius2 theme-botton">รายการพักบิล </ion-button>
 
@@ -112,7 +112,7 @@
               <ion-button [class.button_active]="type === 1" (click)="type =1"
                 class="w-full max-w-[178px]  custom-button border-radius2"
                 [class]="type == 1?'theme-botton text-white':'text-black'">
-
+                <ion-icon name="cash-outline"></ion-icon>
                 <p><ion-text color="black">
                     <h1>เงินสด</h1>
                   </ion-text></p>
@@ -122,6 +122,7 @@
               <ion-button [class.button_active]="type === 2" (click)="type=2"
                 class="w-full max-w-[178px]  custom-button border-radius2"
                 [class]="type == 2?'theme-botton text-white':'text-black'">
+                <ion-icon name="swap-horizontal-outline"></ion-icon>
                 <p><ion-text color="black">
                     <h1>เงินโอน</h1>
                   </ion-text></p>
@@ -131,6 +132,7 @@
               <ion-button [class.button_active]="type === 3" (click)="type=3"
                 class="w-full max-w-[178px]  custom-button border-radius2"
                 [class]="type == 3?'theme-botton text-white':'text-black'">
+                <ion-icon name="card-outline"></ion-icon>
                 <p><ion-text color="black">
                     <h1>ตัดบัตร</h1>
                   </ion-text></p>

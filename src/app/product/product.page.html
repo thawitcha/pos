@@ -3,7 +3,35 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>เพิ่มสินค้า</ion-title>
+    <div class="flex flex-row w-full justify-between px-5">
+      <div class="flex flex-row items-center">
+        <p class="items-center flex pr-[20px]">สินค้า</p>
+        <ion-button class="w-[120px] h-[35px] border-radius flex justify-center">สินค้า</ion-button>
+        <ion-button class="w-[120px] h-[35px] border-radius">กลุุ่ม</ion-button>
+        
+      </div>
+      <div class=" flex flex-row">
+        <div class="flex flex-row mr-6">
+          <ion-searchbar placeholder="ค้นหา" class="w-[500px] h-[60px] pl-20 border-radius-orcle"></ion-searchbar>
+          <span class="flex items-center">Sort by:</span>
+          <span class="flex items-center">สินค้าที่แสดง</span>
+        </div>
+
+        <div class="flex items-center">
+          <ion-select aria-label="Fruit" interface="popover" placeholder="Category" fill="outline"  class="">
+            <ion-select-option value="apples">Apples</ion-select-option>
+            <ion-select-option value="oranges">Orang es</ion-select-option>
+            <ion-select-option value="bananas">Bananas</ion-select-option>
+          </ion-select>
+        
+      </div>
+      <div class="flex items-center">
+      <ion-button class="border-radius w-[140px] h-[35px]">เพิ่มสินค้า</ion-button>
+      </div>
+    </div>
+
+
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -14,30 +42,7 @@
     </ion-toolbar>
   </ion-header>
   <ion-col>
-    <div class="flex flex-row w-full justify-between px-5">
-      <div class="flex flex-row">
-        <ion-button class="w-[120px] h-[35px] border-radius">สินค้า</ion-button>
-        <ion-button class="w-[120px] h-[35px] border-radius">กลุุ่ม</ion-button>
-        <ion-searchbar placeholder="ค้นหา" class="w-[500px] h-[60px] pl-20 border-radius-orcle"></ion-searchbar>
-      </div>
-      <div class=" flex flex-row">
-        <div class="flex flex-row mr-6">
-          <span class="flex items-center">Sort by:</span>
-          <span class="flex items-center">สินค้าที่แสดง</span>
-        </div>
-
-        <div class="mx-7">
-          <ion-select aria-label="Fruit" interface="popover" placeholder="Category" class="">
-            <ion-select-option value="apples">Apples</ion-select-option>
-            <ion-select-option value="oranges">Orang es</ion-select-option>
-            <ion-select-option value="bananas">Bananas</ion-select-option>
-          </ion-select>
-        </div>
-        <ion-button class="border-radius w-[140px] h-[35px]">เพิ่มสินค้า</ion-button>
-      </div>
-
-
-    </div>
+    
     <div class="flex w-full">
       <table class="table-fixed w-full">
         <thead class="bg-top-table">

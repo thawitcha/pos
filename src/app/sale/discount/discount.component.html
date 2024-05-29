@@ -26,17 +26,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of display_data">
+        <tr *ngFor="let item of final_discount">
           <td class="text-center"><ion-checkbox labelPlacement="end"
-              class="w-fit ml-auto mr-4 my-4">{{item.name}}</ion-checkbox></td>
-          <td class="text-center">{{item.count}}</td>
+              class="w-fit ml-auto mr-4 my-4 ">{{item.discount_name}}</ion-checkbox></td>
+          <td class="text-center">{{item.discount_count}}</td>
         </tr>
       </tbody>
     </table>
   </div>
   <div class="absolute inset-x-[35px] bottom-[35px] h-16 flex justify-between">
     <ion-button (click)="modalCtrl.dismiss()" expand="block" shape="round" >ปิดออก</ion-button>
-    <ion-button (click)="modalCtrl.dismiss()" expand="block" shape="round">ตกลง</ion-button>
+    <ion-button (click)="save()" expand="block" shape="round">ตกลง</ion-button>
   </div>
 
 </div>
