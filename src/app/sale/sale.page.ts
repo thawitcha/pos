@@ -166,6 +166,7 @@ export class SalePage implements OnInit {
     }
   }
   clear() {
+
     this.real_cash = 0
     this.bank_cash = 0
   }

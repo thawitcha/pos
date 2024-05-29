@@ -11,7 +11,7 @@ export class AppService {
 
   }
   get(uri: string) {
-    return this.Http.get(environment + uri)
+    return this.Http.get(environment.base_url + uri)
   }
   postdata(uri: string, data: any) {
     return this.Http.post(environment.base_url+ uri, data)
