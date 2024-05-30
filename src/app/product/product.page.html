@@ -60,13 +60,13 @@
         <tbody *ngFor="let item of foods; let i = index ">
           <tr>
             <td class="pl-10"><img src="{{item.pic_url}}" alt="test" class="items-center object-cover h-[75px] w-[100px]  p-[8px] "></td>
-            <td>K-0001</td>
+            <td>{{item.menu_code}}</td>
             <td>{{item.name}}</td>
             <td class="text-center">{{item.price}}</td>
             <td class="text-center">แสดง</td>
             <td class=" flex justify-center">
-                <ion-select aria-label="Fruit" interface="popover" placeholder="Category" class="w-auto">
-                <ion-select-option value="apples">Apples</ion-select-option>
+                <ion-select aria-label="Fruit" interface="popover" placeholder="{{item.fg_name}}" class="w-auto">
+                <ion-select-option value="apples">apples</ion-select-option>
                 <ion-select-option value="oranges">Orang es</ion-select-option>
                 <ion-select-option value="bananas">Bananas</ion-select-option>
               </ion-select></td>
