@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { NumberValueAccessor } from '@angular/forms';
-import {ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.page.html',
@@ -9,7 +9,8 @@ import {ViewChild, ElementRef } from '@angular/core';
 export class ProductPage implements OnInit {
   @ViewChild('fileInput', { static: false }) fileInput!: ElementRef;
   constructor() { }
-
+    getBackend: any
+    foods: any [] = [];
   add : number = 0;
   selectedfile : File|any = null;
   imagePreview: string | null = null;
@@ -36,6 +37,7 @@ this.selectedfile = event.target.files[0]
  
 
   ngOnInit() {
-  }
 
+  
+  }
 }
