@@ -16,7 +16,7 @@ export class AddDiscountComponent implements OnInit {
   ngOnInit() {
      this.profileForm = new FormGroup({
       discount_name: new FormControl(''),
-      discount_count: new FormControl(0),
+      discount_count: new FormControl(''),
       discount_point: new FormControl(''),
       discount_type: new FormControl(''),
     });
