@@ -58,6 +58,55 @@
           </tr>
         </thead>
         <tbody>
+          <tr *ngIf="add === 1">
+            <td class="flex justify-center items-center" >
+              
+                <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" hidden>
+                <ion-button expand="block" style="height: 126px; width:126px; "*ngIf="!imagePreview" (click)="triggerFileInput()">Select Image</ion-button>
+              
+              <div *ngIf="imagePreview "(click)="triggerFileInput()">
+                <img [src]="imagePreview" alt="Image Preview" style="height: 126px; width:126px; object-fit: contain ">
+              </div>
+            </td>
+            <td>
+              <ion-input type="text" placeholder="Code"></ion-input>
+            </td>
+            <td>
+              <ion-input type="text" placeholder="Name"></ion-input>
+            </td>
+            <td>
+              <ion-input type="text" placeholder="Price" class="text-center"></ion-input>
+            </td>
+            <td>
+              <div class="flex justify-center">
+              <ion-select aria-label="Fruit" interface="popover"
+                placeholder="Category" class="w-auto">
+                <ion-select-option value="apples">Apples</ion-select-option>
+                <ion-select-option value="oranges">Orang es</ion-select-option>
+                <ion-select-option value="bananas">Bananas</ion-select-option>
+              </ion-select>
+            </div>
+            </td>
+            <td>
+              <div class="flex justify-center">
+              <ion-select aria-label="Fruit" interface="popover"
+                placeholder="Category" class="w-auto">
+                <ion-select-option value="apples">Apples</ion-select-option>
+                <ion-select-option value="oranges">Orang es</ion-select-option>
+                <ion-select-option value="bananas">Bananas</ion-select-option>
+              </ion-select>
+            </div>
+            </td>
+            <td>
+              <ion-input class="flex justify-center text-center" type="number" placeholder="0"></ion-input>
+            </td>
+            <td >
+              <div class="flex flex-col justify-center w-full">
+              <div class=" flex justify-center"><ion-button  class="flex justify-center items-center border-radius-orcle py-[10px] px-[10px]" size="fit">บันทึก</ion-button></div>
+              <div class=" flex justify-center"><ion-button  class="flex justify-center items-center border-radius-orcle pb-[10px] px-[10px]"size="fit">ยกเลิก</ion-button></div>
+            </div>
+            </td>
+          </tr>
           <!-- <tr>
             <td class="pl-10"><img src="{{item.pic_url}}" alt="test" class="items-center object-cover h-[75px] w-[100px]  p-[8px] "></td>
             <td>{{item.menu_code}}</td>
@@ -71,7 +120,9 @@
                 <ion-select-option value="bananas">Bananas</ion-select-option>
               </ion-select></td>
             <td class="text-center">1</td>
-            <td><ion-button size="small" class="flex justify-center items-center border-radius-orcle ">แก้ไข</ion-button></td>
+            <td>
+              <ion-button size="small" class="flex justify-center items-center border-radius-orcle ">แก้ไข</ion-button>
+            </td>
           </tr> -->
 
         </tbody>
